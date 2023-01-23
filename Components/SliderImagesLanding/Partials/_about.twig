@@ -1,0 +1,17 @@
+<div class="overlay-toggle"><div class="overlay-toggle--button small">About</div></div>
+<div class="overlay-close"><div class="overlay-close--button small">Close</div></div>
+<div class="overlay-about">
+    <div class="overlay-about--content">
+    <div class="text">{{ aboutHtml|e('wp_kses_post')}}</div>
+    <ul class="skills">
+    {% for panel in skillPanels %}
+        <li class="panel">{{ panel.panelTitle }}</li>
+    {% endfor %}
+    </ul>
+    <div class="bios">
+    {% for panel in bioPanels %}
+      <div>{{ panel.panelText|e('wp_kses_post') }}</div>
+    {% endfor %}
+    </div>
+    </div>
+</div>

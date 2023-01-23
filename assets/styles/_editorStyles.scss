@@ -1,0 +1,147 @@
+/* stylelint-disable property-no-vendor-prefix */
+
+@include font-face('RudaRegular', 'Ruda_Regular', '400', 'normal');
+@include font-face('RudaSemibold', 'Ruda_SemiBold', '600', 'normal');
+
+.mce-content-body {
+  background-color: #dedede;
+}
+
+#tinymce {
+  h1,
+  .h1 {
+    font-family: 'RudaSemibold', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 42px;
+  }
+
+  h2,
+  .h2 {
+    font-family: 'RudaSemibold', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 34px;
+  }
+
+  h3,
+  .h3 {
+    font-family: 'RudaSemibold', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22px;
+    text-transform: uppercase;
+  }
+
+  p,
+  .p
+  .paragraph {
+    font-family: 'RudaRegular', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+  }
+
+  .small {
+    font-family: 'RudaRegular', sans-serif;
+    font-size: 16px;
+    margin: 0 0 $spacing-small;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: $black;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+  }
+
+  .button {
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: inherit;
+    padding: $spacing-small $spacing-large;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    user-select: none;
+
+    &:disabled,
+    &--disabled {
+      cursor: default;
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    // &:hover,
+    // &:focus {
+    //   background-color: $white;
+    //   border-color: $orange;
+    //   color: $orange;
+    //   transition: all 0.2s linear;
+    // }
+
+    &::after {
+      content: '↑';
+      margin-left: $spacing-large;
+    }
+
+    &--white {
+      background-color: transparent;
+      border: 1px solid $white;
+      color: $white;
+
+      &:hover,
+      &:focus {
+        background-color: $white;
+        color: $orange;
+      }
+    }
+
+    &--orange {
+      background-color: transparent;
+      border: 1px solid $orange;
+      color: $orange;
+
+      &:hover,
+      &:focus {
+        background-color: $orange;
+        color: $white;
+      }
+    }
+
+    &--green {
+      background-color: transparent;
+      border: 1px solid $green;
+      color: $green;
+
+      &:hover,
+      &:focus {
+        background-color: $green;
+        color: $white;
+      }
+    }
+  }
+
+  .textGradient {
+    &Orange {
+      background: linear-gradient(90deg, #e17a3f 0%, #dd5a3a 165.97%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  
+    &Green {
+      background: linear-gradient(90deg, #58b14e -0.04%, #b8d484 165.69%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}

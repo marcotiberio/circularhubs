@@ -1,0 +1,43 @@
+<nav is="flynt-navigation-burger" class="flyntComponent navBurger" aria-label="{{ __("Main", "flynt") }}">
+  <div class="container">
+    <div class="container-inner">
+    <div class="left">
+      {% include 'Partials/_logo.twig' with { 'logo': logo, 'site': site } only %}
+    </div>
+    <div class="right">
+      {% if menu %}
+        {% include 'Partials/_hamburger.twig' with { 'a11y': a11y } only %}
+      {% endif %}
+    </div>
+    </div>
+  </div>
+  {% if menu %}
+    <ul class="menu" id="navigationBurger-menu">
+      {% for item in menu.items %}
+        {# regular menu item #}
+        {% if not item.children %}
+          <li class="menu-item {{ item.current ? 'menu-item--current' }}">
+            <a class="menu-link h3" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noreferrer noopener"' }}>
+              {{ item.title }}
+            </a>
+          </li>
+        {% endif %}
+        {# menu with submenu item #}
+        {% if item.children %}
+          <li class="menu-item {{ item.current ? 'menu-item--current' }}">
+            <a class="menu-link open-submenu h3" data-slug="{{item.slug}}" id="sub-{{item.slug}}" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noreferrer noopener"' }}>
+              {{ item.title }}
+            </a>
+            <ul class="menu-submenu">
+              {% for subitem in item.children %}
+                <li class="menu-item {{ subitem.current ? 'menu-item--current' }}">
+                  <a class="menu-link paragraph" href="{{ subitem.link }}">{{ subitem.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</nav>

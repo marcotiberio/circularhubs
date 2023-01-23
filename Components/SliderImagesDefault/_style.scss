@@ -1,0 +1,129 @@
+[is='flynt-slider-images'] {
+  .container {
+    grid-column-end: 13;
+    grid-column-start: 1;
+    margin: 0 auto;
+    padding: $spacing-large*3 0;
+    width: 100%;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin: 0;
+      max-width: 100%;
+      padding: $spacing-large;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      margin: 0;
+      max-width: 100%;
+      padding: $spacing-small;
+    }
+  }
+
+  .slider {
+    position: relative;
+    width: 100vw;
+
+    .swiper-wrapper {
+      @media (max-width: $breakpoint-tablet) {
+        align-items: center;
+      }
+    }
+
+    &-item {
+      // counter-increment: section;
+      height: fit-content;
+      overflow: hidden;
+      // padding-bottom: (2/3) * 100%;
+      // padding-bottom: 40%;
+      position: relative;
+
+      @media (max-width: $breakpoint-tablet) {
+        height: 100%;
+        padding-bottom: 0;
+      }
+    }
+
+    &-button {
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: opacity 0.2s ease-out;
+      width: 40px;
+      z-index: 10;
+
+      @media (min-width: $breakpoint-tablet) {
+        &:hover,
+        &:focus {
+          border: 1px solid $white;
+        }
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &--prev {
+        left: 0;
+      }
+
+      &--next {
+        right: 0;
+      }
+
+      .feather {
+        color: $color-contrast;
+        height: auto;
+        top: 0;
+        width: 80%;
+      }
+    }
+  }
+
+  .figure {
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+
+    &-image {
+      height: 50vh;
+      margin: 0 auto;
+      object-fit: cover;
+      width: auto;
+
+      @media (max-width: $breakpoint-tablet) {
+        height: auto;
+      }
+    }
+
+    &-caption {
+      color: $color-text;
+      display: inline-block;
+      font-size: 1rem;
+      left: 0;
+      max-width: 450px;
+      padding: 0;
+      position: relative;
+      top: 0;
+
+      // &::before {
+      //   content: counter(section);
+      //   font-size: 75%;
+      //   line-height: 0;
+      //   margin-right: 5px;
+      //   position: relative;
+      //   top: -0.5em;
+      //   vertical-align: baseline;
+      // }
+    }
+  }
+}

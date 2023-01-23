@@ -1,0 +1,13 @@
+.logo {
+  display: block;
+  flex-shrink: 0;
+
+  &-image {
+    height: 100%;
+    width: 150px;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 150px;
+    }
+  }
+}

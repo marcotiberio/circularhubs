@@ -1,0 +1,19 @@
+<div class="flyntComponent flyntComponent-listSocial" is="flynt-list-social">
+  <div class="container">
+    {# {% if contact %}
+      <a class="contact" href="{{ contact.url }}">{{ contact.title|e }}</a>
+    {% endif %} #}
+    {# <div class="componentTitle">{{ title|e }}</div> #}
+    <div class="socials grid8">
+      <ul class="list">
+        {% for panel in repeaterPanels %}
+          <li class="panel">
+            <a href="{{ panel.panelLink.url }}" target="_blank" rel="noreferrer noopener" type="button">
+              {{ panel.panelLink.title|e }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

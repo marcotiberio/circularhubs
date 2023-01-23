@@ -1,0 +1,15 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="post">
+    {{ renderComponent('BlockPostHeader', { post: post }) }}
+    <section class="post-main">
+      {% for component in post.meta('eventComponents') %}
+        {{ renderComponent(component) }}
+      {% endfor %}
+    </section>
+    <section class="post-related">
+      {{ renderComponent('GridEventsRelated', {'taxonomies': post.categories()}) }}
+    </section>
+  </article>
+{% endblock %}

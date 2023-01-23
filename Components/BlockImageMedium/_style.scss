@@ -1,0 +1,39 @@
+[is='flynt-block-image-medium'] {
+  .imageWrapper {
+    align-items: center;
+    column-gap: $spacing-small;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: block;
+    }
+
+    &-imageLeft {
+      figure {
+        grid-column-end: 3;
+        grid-column-start: 1;
+      }
+    }
+
+    &-imageCenter {
+      figure {
+        grid-column-end: 4;
+        grid-column-start: 2;
+      }
+    }
+
+    &-imageRight {
+      figure {
+        grid-column-end: 5;
+        grid-column-start: 3;
+      }
+    }
+
+    figure {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}

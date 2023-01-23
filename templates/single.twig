@@ -1,0 +1,11 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="post">
+    {{ renderComponent('BlockPostHeader', { post: post }) }}
+    <div class="post-main">{{ post.content }}</div>
+    <section class="post-related">
+      {{ renderComponent('GridPostsRelated', {'taxonomies': post.categories()}) }}
+    </section>
+  </article>
+{% endblock %}

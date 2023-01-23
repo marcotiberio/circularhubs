@@ -1,0 +1,49 @@
+<div class="flyntComponent boxed" style="--themeBrand_colorBackground: {{ options.colorBrandBackground }}; --themeBrand_colorText: {{ options.colorBrandText }};"  is="flynt-block-downloads">
+  <div class="sideInfo sideInfoDe sideInfo--{{ options.hideSideInfo }} sideInfo-orange" data-line="{{ options.sideInfo }}">{{ options.sideInfo }}</div>
+  <div class="sideInfo sideInfoEn sideInfo--{{ options.hideSideInfo }} sideInfo-orange" data-line="{{ options.sideInfoEn }}">{{ options.sideInfoEn }}</div>
+  <div class="container" style="max-width: 1200px;">
+    <div class="content-downloads">
+      <div class="repeaterOuter row">
+        
+        <div class="col col-left">
+          {% for panelOuter in repeaterOuter %}
+          {% if loop.index0 is even %}
+            <div class="repeaterInner" id="content-{{ loop.index }}">
+              <div class="preContent">
+                <h3>{{ panelOuter.title }}</h3>
+              </div>
+              {% for panelInner in panelOuter.repeaterInner %}
+                  <a class="download button-white-down" href="{{ panelInner.file.url|e }}" alt="{{ panelInner.file.alt|e }}" target="_blank" rel="noreferrer noopener">
+                  <div class="download-title">
+                    <p class="sans">{{ panelInner.file.title|e }}</p>
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="col col-right">
+          {% for panelOuter in repeaterOuter %}
+          {% if loop.index0 is odd %}
+            <div class="repeaterInner" id="content-{{ loop.index }}">
+              <div class="preContent">
+                <h3>{{ panelOuter.title }}</h3>
+              </div>
+              {% for panelInner in panelOuter.repeaterInner %}
+                  <a class="download button-white-down" href="{{ panelInner.file.url|e }}" alt="{{ panelInner.file.alt|e }}" target="_blank" rel="noreferrer noopener">
+                  <div class="download-title">
+                    <p class="sans">{{ panelInner.file.title|e }}</p>
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %} 
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

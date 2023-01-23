@@ -1,0 +1,47 @@
+[is='flynt-block-banner-image'] {
+  .preContent {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: $spacing-small;
+
+    .title {
+      margin-bottom: 0;
+    }
+  }
+  
+  .figure {
+    margin: 0 auto;
+    min-height: 100%;
+    position: relative;
+    z-index: 900;
+
+    img {
+      height: 70vh;
+      object-fit: cover;
+
+      @media (max-width: $breakpoint-tablet) {
+        height: auto;
+      }
+    }
+
+    figcaption {
+      bottom: $spacing-small;
+      color: $white;
+      font-size: 0.6rem;
+      left: $spacing-small;
+      max-width: calc(100% - 30px);
+      position: absolute;
+      width: fit-content;
+    }
+
+    // figcaption {
+    //   padding: 0 $spacing-large;
+
+    //   @media (max-width: $breakpoint-tablet) {
+    //     padding: 0 $spacing-small;
+    //   }
+    // }
+  }
+}

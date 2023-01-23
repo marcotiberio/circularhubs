@@ -1,0 +1,42 @@
+[is='flynt-block-footnotes'] {
+  .container {
+    padding-top: 0;
+    
+    .content {
+      @include reset-content-margins;
+
+      @media (max-width: $breakpoint-tablet) {
+        display: block;
+      }
+
+      .footnotes {
+        border-top: 1px solid $black;
+        grid-column-end: 7;
+        grid-column-start: 3;
+        list-style: none;
+        padding: $spacing-large 0;
+
+        .footnote {
+          align-items: flex-start;
+          display: flex;
+          flex-flow: row;
+          justify-content: flex-start;
+
+          sup {
+            margin-right: 5px;
+          }
+
+          .right {
+            font-style: italic;
+            margin-left: 5px;
+          }
+        }
+      }
+  
+      > :last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

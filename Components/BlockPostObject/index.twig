@@ -1,0 +1,41 @@
+{% if items|length > 0 %}
+<div class="flyntComponent" is="flynt-block-post-object">
+  <div class="container">
+    {% for item in items %}
+    <div class="box">
+      <div class="box-inner box-inner--content">
+        <div class="box-copy">
+          <h1>{{ item.title }}</h1>
+          {# {% for post in post %}
+            {% for content_block in artistComponents %}
+                {% if content_block.acf_fc_layout == 'BlockArtistInfo' %}
+                    {{ content_block.bioHtml|e('wp_kses_post') }}
+                {% endif %}
+            {% endfor %}
+          {% endfor %} #}
+          {# <p class="content-excerpt">{{ item.preview.read_more(false).length(18) }}</p> #}
+          <a href="{{ item.link }}" class="button button--link content-readMore" aria-hidden="true" tabindex="-1">{{ readMoreText }}</a>
+        </div>
+      </div>
+      <div class="box-inner box-inner--image">
+        {# {{ renderComponent('BlockImage', { image: item.thumbnail, options: { size: 'sizeMedium' }, noComponentSpacing: true }) }} #}
+        <img class="figure-image lazyload"
+            src="{{ item.thumbnail.src|resizeDynamic(500) }}"
+            srcset="{{ placeholderImage(500, 500 / item.thumbnail.aspect) }}"
+            data-srcset="
+              {{ item.thumbnail.src|resizeDynamic(1920) }} 1920w,
+              {{ item.thumbnail.src|resizeDynamic(1320) }} 1320w,
+              {{ item.thumbnail.src|resizeDynamic(1280) }} 1280w,
+              {{ item.thumbnail.src|resizeDynamic(1035) }} 1035w,
+              {{ item.thumbnail.src|resizeDynamic(860) }} 860w,
+              {{ item.thumbnail.src|resizeDynamic(750) }} 750w,
+              {{ item.thumbnail.src|resizeDynamic(500) }} 500w,
+              {{ item.thumbnail.src|resizeDynamic(375) }} 375w"
+            data-sizes="auto"
+            alt="{{ item.thumbnail.alt|e }}">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,10 @@
+{% if cookieNoticeIsEnabled %}
+<div is="flynt-block-cookie-notice" class="flyntComponent {{ layout }}" role="dialog">
+  <div class="container">
+    <div class="content">
+      {{ contentHtml|e('wp_kses_post') }}
+    </div>
+    <button type="button" class="button" aria-label="Close" data-close>{{ closeButtonLabel|e }}</button>
+  </div>
+</div>
+{% endif %}

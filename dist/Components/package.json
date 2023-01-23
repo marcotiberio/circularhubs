@@ -1,0 +1,49 @@
+{
+  "name": "flynt-premium-components",
+  "version": "1.1.1",
+  "description": "Premium Components for Flynt projects",
+  "author": "bleech <flynt@bleech.de>",
+  "license": "SEE LICENSE IN LICENSE.pdf",
+  "homepage": "https://flyntwp.com/premium-components/",
+  "standard-version": {
+    "types": [
+      {
+        "type": "feat",
+        "section": "Features"
+      },
+      {
+        "type": "fix",
+        "section": "Bug Fixes"
+      },
+      {
+        "type": "chore",
+        "hidden": true
+      },
+      {
+        "type": "docs",
+        "section": "Other",
+        "hidden": false
+      },
+      {
+        "type": "doc",
+        "section": "Other"
+      },
+      {
+        "type": "style",
+        "hidden": true
+      },
+      {
+        "type": "refactor",
+        "section": "Other"
+      },
+      {
+        "type": "perf",
+        "section": "Other"
+      },
+      {
+        "type": "test",
+        "hidden": true
+      }
+    ]
+  }
+}

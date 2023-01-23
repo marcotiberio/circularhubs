@@ -1,0 +1,25 @@
+<div class="flyntComponent boxed" id="{{ options.sectionId|lower|replace({' ': '-'})}}" is="flynt-block-text-image-repeater">
+  <div class="container grid8">
+    <div class="content content-title small">{{ options.sectionId }}</div>
+    <div class="content content-text">
+      {% for panel in contentPanels %}
+        <div class="panel grid5">
+          {# <hr class="top-border top-border--{{ options.hideTopBorder }}"> #}
+          <div class="panel-title small">{{ panel.panelTitle }}</div>
+          <div class="panel-text">{{ panel.panelTexteditor|e('wp_kses_custom') }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="content content-image">
+      <figure class="figure">
+        <img class="figure-image lazyload"
+          src="{{ image.src|resize(32) }}"
+          data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+          data-sizes="auto">
+        {% if image.caption %}
+          <figcaption class="figure-caption">{{ image.caption|e }}</figcaption>
+        {% endif %}
+      </figure>
+    </div>
+  </div>
+</div>

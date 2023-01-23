@@ -1,0 +1,19 @@
+<div class="flyntComponent boxed" id="{{ options.sectionId|lower|replace({' ': '-'})}}" is="flynt-block-text-image-two-col">
+  <div class="container grid8">
+    <div class="content content-title small">{{ options.sectionId }}</div>
+    <div class="content content-text">
+      {{ text|e('wp_kses_custom') }}
+    </div>
+    <div class="content content-image">
+      <figure class="figure">
+        <img class="figure-image lazyload"
+          src="{{ image.src|resize(32) }}"
+          data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+          data-sizes="auto">
+        {% if image.caption %}
+          <figcaption class="figure-caption">{{ image.caption|e }}</figcaption>
+        {% endif %}
+      </figure>
+    </div>
+  </div>
+</div>

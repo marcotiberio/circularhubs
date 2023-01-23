@@ -1,0 +1,135 @@
+.formkit-form[data-uid='a639e1537e'][min-width~='700'] [data-style='clean'],
+.formkit-form[data-uid='a639e1537e'][min-width~='800'] [data-style='clean'] {
+  padding: 0 !important;
+}
+
+.formkit-form[data-uid='a639e1537e'] .formkit-fields {
+  column-gap: $spacing-large;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+
+  @media (max-width: $breakpoint-mobile) {
+    column-gap: $spacing-small;
+  }
+}
+
+.formkit-form[data-uid='a639e1537e'] .formkit-field,
+.formkit-form[data-uid='a639e1537e'] .formkit-submit {
+  margin: 0 !important;
+}
+
+.formkit-form[data-uid='a639e1537e'] .formkit-powered-by-convertkit-container {
+  display: none;
+}
+
+.formkit-form[data-uid='a639e1537e'] .formkit-input {
+  appearance: none;
+  background-color: #fff;
+  border-bottom: 1px solid $black !important;
+  border-color: $black !important;
+  border-left: 0 !important;
+  border-radius: 0;
+  border-right: 0 !important;
+  border-top: 0 !important;
+  color: $black;
+  font-family: inherit;
+  font-size: 1.2rem !important;
+  margin: 0 !important;
+  padding: 0 15px !important;
+  width: 100%;
+}
+
+.formkit-form[data-uid='a639e1537e'] .formkit-submit {
+  background-color: $white;
+  border: 1px solid $black;
+  border-radius: 0;
+  color: $black;
+  font-size: 1.2rem !important;
+  margin: 0 !important;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: $black !important;
+    color: $white !important;
+  }
+
+  span {
+    padding: 0 !important;
+    transition: none !important;
+  }
+}
+
+.form--newsletter {
+  margin-top: $spacing-large*2;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin-top: $spacing-large;
+  }
+
+  .group-submit {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: flex-start;
+    margin-bottom: $spacing-large;
+
+    input {
+      margin: 0;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .button {
+      background-color: $white;
+      border-radius: 0;
+      color: $black;
+      font-size: 1.2rem;
+      margin-left: $spacing-large;
+      padding: 0 $spacing-large;
+  
+      &:hover,
+      &:focus {
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
+}
+
+.wpcf7-form {
+  &.invalid .wpcf7-response-output {
+    border-color: $orange !important;
+    margin: $spacing-large 0;
+    padding: 5px;
+    text-align: center;
+  }
+
+  &.unaccepted .wpcf7-response-output {
+    border-color: $orange !important;
+    margin: $spacing-large 0;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .wpcf7-response-output {
+    border-color: $green !important;
+    margin: $spacing-large 0;
+    padding: 5px;
+    text-align: center;
+  }
+}
+
+.wpcf7-not-valid-tip {
+  color: $orange;
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.wpcf7-list-item {
+  margin: 0;
+}

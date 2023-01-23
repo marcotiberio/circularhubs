@@ -1,0 +1,37 @@
+{% if posts|length > 0 %}
+  <ul class="grid">
+    {% for post in posts  %}
+      <li class="grid-item">
+        <div class="content">
+          <a href="{{ post.link }}" class="content-link" title="{{ post.title }}">
+            {# {% if post.hoverImage %}
+              <div class="featuredImage" style="background-image: url('{{ Image(post.hoverImage).src }}');"><div>
+            {% else %}
+              <div class="featuredImage" style="background-image: url('{{ Image(post.thumbnail).src }}');"><div>
+            {% endif %} #}
+            <figure class="figure">
+              <img class="figure-image lazyload"
+                src="{{ post.thumbnail.src|resize(32) }}"
+                data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                data-sizes="auto"
+                alt="{{ post.title }}">
+            </figure>
+            <div class="content-inner">
+              <div class="title">{{ post.title }}</div>
+            </div>
+          </a>
+          {# <footer class="content-footer">
+            <span class="content-readingTime">
+              <i data-feather="clock"></i> {{ post.content | readingtime }} {{ labels.readingTime }}
+            </span>
+            <a href="{{ post.link }}" class="button button--link content-readMore" aria-hidden="true" tabindex="-1">{{ labels.readMore }}</a>
+          </footer> #}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div class="noResults boxed">
+    <h1>{{ labels.noResults }}</h1>
+  </div>
+{% endif %}

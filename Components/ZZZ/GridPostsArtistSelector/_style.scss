@@ -1,0 +1,136 @@
+[is='flynt-grid-posts-artist-selector'] {
+  .preContent {
+    margin-bottom: 0;
+
+    &Title {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+
+  .container {
+    @media (max-width: $breakpoint-tablet) {
+      display: flex;
+      flex-flow: column wrap;
+      padding: 0;
+    }
+
+    .allPostsLink {
+      align-items: center;
+      display: flex;
+      margin-bottom: $spacing-large;
+      margin-left: $spacing-large;
+      margin-right: $spacing-large;
+      margin-top: $spacing-large;
+
+      &::after {
+        color: currentColor;
+        content: '>';
+        margin-left: 10px;
+      }
+    }
+
+    .grid {
+      @include reset-list;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      margin: 0;
+
+      &--columns2,
+      &--columns3,
+      &--columns4 {
+        .grid-item {
+          @media (min-width: $breakpoint-tablet) {
+            width: 50%;
+          }
+        }
+      }
+
+      &--columns3 {
+        .grid-item {
+          @media (min-width: $breakpoint-tablet) {
+            width: 33.33%;
+          }
+        }
+      }
+
+      &--columns4 {
+        .grid-item {
+          /* ensure 2 columns stacking up until $breakpoint-desktop */
+          max-width: 50%;
+
+          @media (min-width: $breakpoint-desktop) {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+
+  .grid-item {
+    border-top: 1px solid $black;
+    max-width: 100%;
+    padding: 0;
+    width: 100%;
+
+    &:last-child {
+      border-bottom: 1px solid $black;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 100%;
+
+      &-image {
+        border: 1px solid $black;
+        height: fit-content;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      &-inner {
+        column-gap: $spacing-small;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @media (max-width: $breakpoint-mobile) {
+          display: grid;
+          grid-auto-rows: auto;
+          grid-template-columns: 1fr;
+          row-gap: $spacing-small;
+        }
+
+        &--title {
+          display: flex;
+          grid-column-end: 3;
+          grid-column-start: 2;
+          justify-content: flex-start;
+          padding: $spacing-small 0;
+          text-transform: uppercase;
+
+          @media (max-width: $breakpoint-mobile) {
+            grid-column-end: 2;
+            grid-column-start: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .artist {
+    .content-date {
+      display: none;
+    }
+  }
+}

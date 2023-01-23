@@ -1,0 +1,37 @@
+<nav is="flynt-navigation-main" class="flyntComponent navMain" aria-label="{{ __("Main", "flynt") }}">
+  <a class="logo" href="{{ site.link }}">
+    <img class="logo-image" src="{{ logo.src }}" alt="{{ logo.alt }}">
+  </a>
+  <div class="wrapper">
+    {% if menu %}
+      <ul class="menu">
+        {% for item in menu.items %}
+          {# regular menu item #}
+          {% if not item.children %}
+            <li class="menu-item {{ item.current ? 'menu-item--current'}}">
+              <a class="menu-link" {{ item.target == '_blank' ? 'target="_blank" rel="noreferrer noopener"' }} data-slug="{{item.slug}}" href="{{item.link}}" id="sub-{{item.slug}}">
+                {{ item.title }}
+              </a>
+            </li>
+          {% endif %}
+          {# menu with submenu item #}
+          {% if item.children %}
+            <li class="menu-item open-submenu {{ item.current ? 'menu-item--current'}}" >
+              <a class="menu-link" data-slug="{{item.slug}}" href="{{item.link}}" id="sub-{{item.slug}}">
+                {{ item.title }}
+              </a>
+              <ul class="menu menu-submenu">
+                {% for subitem in item.children %}
+                  <li class="menu-item {{ subitem.current ? 'menu-item--current' }}">
+                    <a class="menu-link" href="{{ subitem.link }}">{{ subitem.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {# {% include 'Partials/_search.twig' %} #}
+  </div>
+</nav>

@@ -1,0 +1,11 @@
+[is='flynt-block-quote'] {
+  .content {
+    @include reset-content-margins;
+    text-align: inherit;
+
+    > :last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}

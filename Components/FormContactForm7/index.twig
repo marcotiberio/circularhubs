@@ -1,0 +1,18 @@
+<div is="flynt-form-contact-form-7" class="flyntComponent">
+  <div class="container">
+    {% if preContentHtml %}
+      <div class="preContent">
+        {{ preContentHtml|e('wp_kses_post') }}
+      </div>
+    {% endif %}
+    <div class="form">
+      {% set formShortcode = '[contact-form-7 id="' ~ formId ~ '"]' %}
+      {{ formShortcode|shortcodes }}
+      {% if contentFooterHtml %}
+        <div class="postContent">
+          {{ contentFooterHtml|e('wp_kses_post') }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

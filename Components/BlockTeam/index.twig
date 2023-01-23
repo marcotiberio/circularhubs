@@ -1,0 +1,25 @@
+<div class="flyntComponent" is="flynt-block-team">
+  <div class="container boxed">
+    <div class="box box--{{ imagePosition }}">
+      <div class="box-inner box-inner--image">
+        <figure class="figure">
+          <img class="figure-image lazyload"
+            src="{{ image.src|resize(32) }}"
+            data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+            data-sizes="auto">
+          {% if image.caption %}
+            <figcaption class="figure-caption">{{ image.caption|e }}</figcaption>
+          {% endif %}
+        </figure>
+      </div>
+      <div class="box-inner box-inner--content">
+        {{ contentHtml|e('wp_kses_post') }}
+        {% if ctaLink %}
+          <a href="{{ ctaLink.url }}"{% if ctaLink.target %} target="{{ ctaLink.target }}" rel="noreferrer noopener"{% endif %} class="button">
+            {{ ctaLink.title|e }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

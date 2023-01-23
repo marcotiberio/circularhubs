@@ -1,0 +1,200 @@
+[is='flynt-slider-images-landing'] {
+  .container {
+    display: flex;
+    flex-flow: row;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-flow: column;
+      height: auto;
+      padding: 0;
+    }
+  }
+
+  .infoBox {
+    align-items: center;
+    background-color: $white;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    padding: $spacing-large;
+    width: 50%;
+
+    @media (max-width: $breakpoint-tablet) {
+      height: fit-content;
+      padding: $spacing-large*3 $spacing-large $spacing-large*2 $spacing-large;
+      width: 100%;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-large*3 $spacing-small $spacing-large $spacing-small;
+    }
+
+    &--content {
+      padding: 0 $spacing-large*1.5;
+
+      @media (max-width: $breakpoint-tablet) {
+        padding: 0;
+      }
+
+      .text {
+        font-size: 1.2rem;
+        margin-top: 20vh;
+
+        @media (max-width: $breakpoint-tablet) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .swiper-wrapper {
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+  }
+
+  .swiper-slide {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  .slider {
+    position: relative;
+    width: 50%;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-grow: 1;
+      // height: 45vh;
+      width: 100%;
+    }
+
+    &-item {
+      height: 100vh;
+      overflow: hidden;
+      // padding-bottom: (6/9) * 100%;
+      position: relative;
+
+      @media (max-width: $breakpoint-tablet) {
+        height: auto;
+      }
+    }
+
+    // &-button-container {
+    //   align-items: center;
+    //   display: flex;
+    //   flex-flow: row wrap;
+    //   justify-content: space-between;
+    //   margin-top: -7.5px;
+    // }
+
+    // &-button {
+    //   align-items: center;
+    //   border-radius: 50%;
+    //   cursor: pointer;
+    //   display: flex;
+    //   flex-flow: row-reverse wrap;
+    //   height: $spacing-large;
+    //   justify-content: center;
+    //   position: relative;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   transition: opacity 0.2s ease-out;
+    //   width: $spacing-large;
+    //   z-index: 10;
+
+    //   @media (min-width: $breakpoint-tablet) {
+    //     &:hover,
+    //     &:focus {
+    //       background-color: transparent;
+    //       border: 1px solid $black;
+    //     }
+    //   }
+
+    //   &.swiper-button-disabled {
+    //     pointer-events: none;
+    //   }
+
+    //   .feather {
+    //     color: $color-text;
+    //     height: auto;
+    //     top: 0;
+    //     width: 80%;
+    //   }
+    // }
+  }
+
+  .figure {
+    // bottom: 0;
+    // left: 0;
+    height: 100vh;
+    margin-bottom: 0;
+    // position: absolute;
+    // right: 0;
+    // top: 0;
+
+    &-image {
+      height: 100%;
+      margin: 0 auto;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &-caption {
+      bottom: 0;
+      color: $white;
+      display: inline-block;
+      font-size: 14px;
+      margin: 0;
+      padding: $spacing-large*2 20px;
+      position: absolute;
+      right: 0;
+      text-align: right;
+
+      @media (max-width: $breakpoint-tablet) {
+        bottom: auto;
+        padding: $spacing-small;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  .logo-image {
+    max-width: 320px;
+
+    @media (max-width: $breakpoint-mobile) {
+      max-width: 210px;
+    }
+  }
+
+  .overlay-logo {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50vw;
+    z-index: 1000;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+
+    svg {
+      width: 25vw;
+    }
+  }
+
+  .showFlex {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  @import 'Partials/newsletter';
+  @import 'Partials/about';
+}

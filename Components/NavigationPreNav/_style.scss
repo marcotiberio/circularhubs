@@ -1,0 +1,165 @@
+[is='flynt-navigation-pre-nav'] {
+  $navigation-height: 25px;
+  background-color: $orange;
+  display: block;
+  width: 100%;
+  z-index: 1001;
+
+  @media (max-width: $breakpoint-tablet) {
+    left: 0;
+    padding: 0;
+    position: fixed;
+    right: auto;
+    top: 0;
+    width: 100%;
+    z-index: 1010;
+  }
+
+  .wrapper {
+    height: $navigation-height;
+    margin: 0 auto;
+    width: auto;
+  }
+
+  .container {
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    padding: 0 $spacing-large;
+
+    @media (max-width: $breakpoint-tablet) {
+      justify-content: center;
+      padding: 0 $spacing-small;
+    }
+  }
+
+  .cta-text {
+    align-items: center;
+    color: $white;
+    cursor: default;
+    display: flex;
+    font-family: 'FuturaLT', sans-serif;
+    font-size: 10px;
+    padding: 0 $spacing-large;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  .menu {
+    @include reset-list;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 0;
+    justify-content: flex-end;
+    margin-right: $spacing-small*3;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-right: $spacing-small;
+    }
+
+    &-item--current {
+      .menu-link {
+        color: $white;
+        text-decoration: underline;
+        text-underline-offset: 2.5px;
+      }
+    }
+
+    &-item {
+      font-size: 0.85rem;
+      padding-left: $spacing-small*3;
+
+      @media (max-width: $breakpoint-tablet) {
+        padding: 0 $spacing-small/2;
+      }
+
+      @media (max-width: $breakpoint-desktop) {
+        text-align: center;
+      }
+    }
+
+    &-link {
+      box-shadow: none;
+      color: $white;
+      display: inline-block;
+      font-family: 'FuturaLT', sans-serif;
+      font-size: 0.7rem;
+      padding: 0;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s ease-out;
+
+      @media (max-width: $breakpoint-desktop) {
+        text-align: center;
+      }
+
+      &:hover,
+      &:focus {
+        color: $white;
+        text-decoration: underline;
+        text-underline-offset: 2.5px;
+      }
+    }
+  }
+
+  .social {
+    @include reset-list;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    justify-content: flex-end;
+
+    @media (max-width: $breakpoint-mobile) {
+      justify-content: flex-start;
+    }
+  }
+
+  .socialList {
+    @include reset-list;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    justify-content: center;
+
+    @media (min-width: $breakpoint-tablet) {
+      justify-content: center;
+    }
+
+    &-link {
+      box-sizing: content-box;
+      display: block;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus {
+        svg {
+          opacity: 0.8;
+          transition: color 0.2s ease;
+        }
+      }
+    }
+
+    &-item {
+      display: inline-block;
+      margin: 0 $spacing-small/2;
+    }
+
+    svg {
+      display: block;
+      filter: invert(0.5) saturate(100) brightness(100);
+      height: 20px;
+      transition: color 0.2s ease;
+      width: auto;
+    }
+  }
+
+  @import 'Partials/search';
+}

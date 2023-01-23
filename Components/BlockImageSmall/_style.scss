@@ -1,0 +1,46 @@
+[is='flynt-block-image-small'] {
+  .imageWrapper {
+    align-items: center;
+    column-gap: $spacing-small;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: block;
+    }
+
+    &-imageLeft {
+      figure {
+        grid-column-end: 2;
+        grid-column-start: 1;
+      }
+    }
+
+    &-imageMiddleLeft {
+      figure {
+        grid-column-end: 3;
+        grid-column-start: 2; 
+      }
+    }
+
+    &-imageMiddleRight {
+      figure {
+        grid-column-end: 4;
+        grid-column-start: 3; 
+      }
+    }
+
+    &-imageRight {
+      figure {
+        grid-column-end: 5;
+        grid-column-start: 4; 
+      }
+    }
+
+    figure {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+[is='flynt-block-post-object'] {
+  $image-aspect-ratio: 3/2;
+  
+  @media (max-width: $breakpoint-tablet) {
+    padding-bottom: $spacing-small;
+  }
+
+  .box {
+    @media (min-width: $breakpoint-tablet) {
+      align-items: center;
+      display: flex;
+    }
+
+    &-inner {
+      position: relative;
+
+      &--content {
+        @media (min-width: $breakpoint-tablet) {
+          margin-left: 0;
+          position: relative;
+          z-index: 20;
+        }
+
+        @media (min-width: $breakpoint-tablet) {
+          align-items: center;
+          display: flex;
+          height: 380px;
+          justify-content: center;
+          margin-left: 0;
+          margin-right: $spacing-small;
+          max-width: 100%;
+          padding-left: 20%;
+          padding-right: 0;
+          z-index: 0;
+        }
+      }
+
+      &--image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+        position: relative;
+        z-index: 10;
+
+        @media (min-width: $breakpoint-tablet) {
+          bottom: 0;
+          margin-left: auto;
+          margin-right: auto;
+          z-index: 30;
+        }
+
+        @media (min-width: $breakpoint-tablet) {
+          bottom: auto;
+          margin-left: 0;
+          max-width: 60%;
+        }
+      }
+    }
+
+    &--imageLeft {
+      @media (min-width: $breakpoint-tablet) {
+        flex-direction: row-reverse;
+      }
+
+      .box-inner--content {
+        @media (min-width: $breakpoint-tablet) {
+          margin-left: $spacing-small;
+          margin-right: 0;
+          padding-left: 0;
+          padding-right: 20%;
+        }
+        
+        &::after {
+          @media (min-width: $breakpoint-tablet) {
+            left: auto;
+            right: 100%;
+          }
+        }
+      }
+
+      .box-inner--image {
+        @media (min-width: $breakpoint-tablet) {
+          margin-left: 10%;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-copy {
+      @include reset-content-margins;
+      margin-left: auto;
+      margin-right: auto;
+      padding: $spacing-small;
+      position: relative;
+      z-index: 10;
+
+      @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-small;
+      }
+
+      @media (min-width: $breakpoint-tablet) {
+        max-width: 440px;
+        padding: 0;
+      }
+    }
+
+    .figure-image {
+      @media (min-width: $breakpoint-tablet) {
+        height: 330px;
+        object-fit: cover;
+        width: calc(330px * 1.5);
+      }
+    }
+  }
+}

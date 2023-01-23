@@ -1,0 +1,76 @@
+.columns-newsletter {
+  br {
+    display: none;
+  }
+
+  p {
+    margin: 0;
+
+    &:not(:first-child) {
+      margin-top: $spacing-large;
+    }
+  }
+
+  .wpcf7 {
+    // transform: translateY(-1rem);
+
+    ::placeholder {
+      color: $white;
+    }
+
+    .form--newsletter {
+      .small {
+        font-size: 0.8rem;
+      }
+      
+      [type='text'] {
+        border-bottom: 1px solid $white;
+        color: $white;
+      }
+
+      [type='email'] {
+        border-bottom: 1px solid $white;
+        color: $white;
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    .group-submit {
+      display: flex;
+      justify-content: space-between;
+
+      .wpcf7-form-control-wrap {
+        width: 100%;
+      }
+
+      .button {
+        background-color: transparent;
+        border-bottom: 1px solid $white;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        padding: 0;
+      }
+    }
+
+    .wpcf7-acceptance {
+      font-size: 0.6rem;
+    }
+
+    .screen-reader-response {
+      display: none;
+    }
+
+    .wpcf7-response-output {
+      color: $green;
+    }
+
+    .wpcf7-not-valid-tip {
+      bottom: -30px;
+      color: $orange;
+      left: 0;
+      position: absolute;
+    }
+  }
+}

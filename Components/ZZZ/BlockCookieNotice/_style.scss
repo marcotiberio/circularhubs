@@ -1,0 +1,56 @@
+[is='flynt-block-cookie-notice'] {
+  background-color: $white;
+  border-top: 1px solid $black;
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 999;
+
+  .container {
+    padding: $spacing-small;
+  }
+
+  .content {
+    @include reset-content-margins;
+    font-size: 0.8rem;
+  }
+
+  &.cookieNotice--isVisible {
+    display: block;
+  }
+
+  &.layoutBottom {
+    .button {
+      margin-top: $spacing-small;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      .container {
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-between;
+        padding: $spacing-small;
+      }
+
+      .content {
+        padding-bottom: 0;
+        padding-right: 30px;
+      }
+    }
+  }
+
+  &.layoutFloating {
+    @media (min-width: $breakpoint-mobile) {
+      bottom: $spacing-small;
+      left: $spacing-small;
+      max-width: 380px;
+      width: calc(100% - (#{$spacing-small} * 2));
+
+      .container {
+        padding: 30px;
+      }
+    }
+  }
+}

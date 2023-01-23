@@ -1,0 +1,25 @@
+<div class="flyntComponent" is="flynt-hero-image-text-half">
+  <div class="container">
+    <div class="content">
+    {% if contentHtml %}
+      <div class="content-inner">
+        {{ contentHtml }}
+      </div>
+    {% endif %}
+    </div>
+    <figure class="figure">
+      <img class="figure-image lazyload"
+        src="{{ posterImage.src|resize(32) }}"
+        data-srcset="{{function('wp_get_attachment_image_srcset', posterImage.id)}}"
+        data-sizes="auto"
+        alt="{{ posterImage.alt|e }}">
+      {% if ooverlayContentHtml %}
+        <div class="overlayText">
+          <div class="overlayText-inner">
+            {{ ooverlayContentHtml }}
+          </div>
+        </div>
+      {% endif %}
+    </figure>
+  </div>
+</div>

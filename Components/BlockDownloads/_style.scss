@@ -1,0 +1,80 @@
+[is='flynt-block-downloads'] {
+  .container {
+    // @include center;
+    overflow-wrap: break-word;
+    padding: $spacing-small 0;
+    width: 100%;
+    word-wrap: break-word;
+
+    @media (max-width: $breakpoint-tablet - 1) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  }
+
+  .repeaterOuter {
+    @include reset-list;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: block;
+    }
+
+    .col {
+      width: 38%;
+
+      &-right {
+        margin-left: 12%;
+
+        @media (max-width: $breakpoint-tablet) {
+          margin-left: 0;
+        }
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+      }
+
+      .repeaterInner {
+        margin-bottom: $spacing-large;
+        width: 100%;
+
+        h3 {
+          color: $orange;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .download {
+      align-items: flex-start;
+      column-gap: $spacing-large;
+      display: flex;
+      flex-flow: row wrap;
+      font-family: 'Vesta', Arial, sans-serif;
+      margin-bottom: 5px;
+      padding: 7px 40px 5px 20px;
+      text-decoration: none;
+      transition: all 0.2s linear;
+      width: 100%;
+
+      &-title {
+        p,
+        .p {
+          font-weight: 400;
+          margin: 0;
+          text-transform: none;
+        }
+      }
+    }
+
+    .button-white-down {
+      border-bottom: 1px solid $orange;
+    }
+  }
+}

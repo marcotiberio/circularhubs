@@ -1,0 +1,97 @@
+.grid {
+  @include reset-list;
+  column-gap: $spacing-large*5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: $spacing-large*4;
+  row-gap: $spacing-large*5;
+
+  @media (max-width: $breakpoint-tablet) {
+    column-gap: $spacing-large*2;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: $spacing-large*2;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    column-gap: $spacing-large;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: $spacing-large;
+  }
+
+  &-item {
+    &:hover {
+      // .featuredImage {
+      //   border-left: 1px solid $orange;
+      //   border-right: 1px solid $orange;
+      //   border-top: 1px solid $orange;
+      //   transition: all 0.2s linear;
+      // }
+
+      .figure {
+        border-left: 1px solid $orange;
+        border-right: 1px solid $orange;
+        border-top: 1px solid $orange;
+        // opacity: 0;
+        // transition: all 0.2s linear;
+
+        &-image {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+
+  &-link {
+    text-decoration: none;
+  }
+
+  // .featuredImage {
+  //   aspect-ratio: 1/1;
+  //   background-position: center;
+  //   background-repeat: repeat;
+  //   background-size: cover;
+  //   display: block;
+  //   max-width: 100%;
+  //   transition: all 0.2s linear;
+  //   width: 100%;
+  // }
+
+  .figure {
+    aspect-ratio: 1/1;
+    background-color: $white;
+    flex-shrink: 0; // IE11 bug fix (prevent image from stretchin')
+    margin: 0;
+    overflow: hidden;
+    padding-bottom: $spacing-large;
+    // transition: all 0.2s linear;
+    
+    &-image {
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      transition: all 0.2s linear;
+    }
+  }
+
+  &-inner {
+    @include reset-content-margins;
+    border-top: 1px solid $orange;
+    padding-top: $spacing-small;
+  }
+
+  .title {
+    text-transform: uppercase;
+  }
+}
+
+.noResults {
+  grid-column-end: 8;
+  grid-column-start: 2;
+  text-align: center;
+}

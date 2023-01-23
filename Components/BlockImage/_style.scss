@@ -1,0 +1,31 @@
+[is='flynt-block-image'] {
+  .figure {
+    margin: 0 auto;
+    min-height: 100%;
+    position: relative;
+    z-index: 900;
+
+    img {
+      height: 70vh;
+      object-fit: cover;
+    }
+
+    figcaption {
+      bottom: $spacing-small;
+      color: $white;
+      font-size: 0.6rem;
+      left: $spacing-small;
+      max-width: calc(100% - 30px);
+      position: absolute;
+      width: fit-content;
+    }
+
+    // figcaption {
+    //   padding: 0 $spacing-large;
+
+    //   @media (max-width: $breakpoint-tablet) {
+    //     padding: 0 $spacing-small;
+    //   }
+    // }
+  }
+}

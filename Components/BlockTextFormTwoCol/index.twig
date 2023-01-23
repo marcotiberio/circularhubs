@@ -1,0 +1,11 @@
+<div class="flyntComponent boxed" id="{{ options.sectionId|lower|replace({' ': '-'})}}" is="flynt-block-text-form-two-col">
+  <div class="container grid8">
+    <div class="content content-title small">{{ options.sectionId }}</div>
+    <div class="content content-text">
+      {{ text|e('wp_kses_custom') }}
+    </div>
+    <div class="content content-form">
+      {{ formForm }}
+    </div>
+  </div>
+</div>

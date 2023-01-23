@@ -1,0 +1,24 @@
+<div class="flyntComponent boxed" id="{{ options.sectionId|lower|replace({' ': '-'})}}" {% if options.backgroundColor %} style="background-color: {{ options.backgroundColor }}" {% endif %} is="flynt-block-wysiwyg-repeater">
+  <div class="container grid8">
+    <div class="content content-title sectionId small">{{ options.sectionId }}</div>
+    <div class="content content-repeater grid8">
+      {% if repeaterTitle %}<div class="content-repeater-title content-repeater-title--{{ options.hideTitle }} h1">{{ repeaterTitle }}</div>{% endif %}
+      <ul class="list">
+        {% for panel in contentPanels %}
+          <div class="panel">
+            <hr class="top-border top-border--{{ options.hideTopBorder }}">
+            {% if panel.panelImage %}
+            <figure class="figure">
+              <img class="figure-image lazyload"
+                src="{{ panel.panelImage.src|resize(32) }}"
+                data-srcset="{{function('wp_get_attachment_image_srcset', panel.panelImage.id)}}"
+                data-sizes="auto">
+            </figure>
+            {% endif %}
+            {{ panel.panelTexteditor|e('wp_kses_custom') }}
+          </div>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

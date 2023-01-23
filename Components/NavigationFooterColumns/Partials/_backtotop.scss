@@ -1,0 +1,26 @@
+.backToTop {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  transition: all 0.25s linear;
+
+  @media (max-width: $breakpoint-tablet) {
+    bottom: 5px;
+    right: -15px;
+
+    svg {
+      height: 50px;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    bottom: 0;
+    left: 0;
+    right: auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+  }
+}

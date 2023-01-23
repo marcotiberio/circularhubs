@@ -1,0 +1,17 @@
+<div class="flyntComponent boxed" is="flynt-block-wysiwyg-two-col">
+  <div class="container">
+    {# {% if title %}
+      <div class="preContent">
+        <div class="title h3">{{ title }}</div>
+      </div>
+    {% endif %} #}
+    <div class="content grid8">
+      <div class="content-left {% if backgroundColorLeft %}{{ backgroundColorLeft }}{% endif %}">
+        {{ contentHtmlLeft|e('wp_kses_custom') }}
+      </div>
+      <div class="content-right {% if backgroundColorRight %}{{ backgroundColorRight }}{% endif %}">
+        {{ contentHtmlRight|e('wp_kses_custom') }}
+      </div>
+    </div>
+  </div>
+</div>

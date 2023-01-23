@@ -1,0 +1,48 @@
+{% if items|length > 0 %}
+<div class="flyntComponent boxed" is="flynt-grid-posts-archive">
+  <div class="container grid8">
+    <div class="preContent grid8">
+      <div class="sideTitle small">Topic</div>
+      <div class="title h1">{{ title }}</div>
+      {% set html = isHome ? preContentHtml : description %}
+      <div class="description">{{ html|e('wp_kses_post') }}</div>
+    </div>
+    {% if terms %}
+      {% include 'Partials/_filter.twig' %}
+    {% endif %}
+    <ul class="posts grid2">
+      {% for item in items %}
+        <li class="post">
+          <a class="post-link" href="{{ item.link }}">
+            {% if item.thumbnail %}
+              <figure class="figure">
+                <img class="figure-image lazyload"
+                  src="{{ item.thumbnail.src|resize(32) }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
+                  data-sizes="auto"
+                  alt="{{ item.title }}">
+              </figure>
+            {% endif %}
+          </a>
+          <div class="post-category small">
+            <span>{{ item.category() }}</span>
+          </div>
+          <div class="post-inner">
+            <h2 class="h2 post-title">{{ item.title }}</h2>
+            {# <p class="post-excerpt">{{ post.preview.read_more(false) }}</p> #}
+            <a class="button button--link small" href="{{ item.link }}" title="{{ item.title }}" aria-hidden="true" tabindex="-1">
+              {{ labels.readMore }}
+            </a>
+          </div>
+        </li>
+      {% else %}
+        <p class="posts-empty">{{ labels.noPostsFound }}</p>
+      {% endfor %}
+    </ul>
+    {% set pagination = posts.pagination %}
+    {% if pagination.pages %}
+      {% include 'Partials/_paginationButtons.twig' %}
+    {% endif %}
+  </div>
+</div>
+{% endif %}

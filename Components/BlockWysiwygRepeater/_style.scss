@@ -1,0 +1,106 @@
+[is='flynt-block-wysiwyg-repeater'] {
+  .container {
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
+    }
+  }
+  
+  .content {
+    @include reset-content-margins;
+    width: 100%;
+
+    p:last-child {
+      margin: 0;
+    }
+
+    &-title {
+      grid-column-end: 2;
+      grid-column-start: 1;
+      text-transform: uppercase;
+    }
+
+    &-repeater {
+      grid-column-end: 9;
+      grid-column-start: 2;
+      
+      @media (max-width: $breakpoint-mobile) {
+        margin-top: $spacing-large;
+      }
+
+      &-title {
+        grid-column-end: 9;
+        grid-column-start: 1;
+        margin-bottom: $spacing-large*2;
+
+        &--1 {
+          display: none;
+        }
+      }
+
+      .list {
+        @include reset-list;
+        align-items: flex-start;
+        // column-gap: $spacing-large;
+        display: grid;
+        grid-column-end: 9;
+        grid-column-start: 1;
+        grid-template-columns: repeat(7, 1fr);
+
+        @media (max-width: $breakpoint-mobile) {
+          display: block;
+        }
+      }
+
+      .panel {
+        margin-bottom: $spacing-large*3;
+
+        &:nth-last-child(2),
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          margin-bottom: $spacing-large*1.5;
+
+          &:nth-last-child(2) {
+            margin-bottom: $spacing-large*1.5;
+          }
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        .top-border {
+          width: $spacing-large*3;
+
+          &--1 {
+            display: none;
+          }
+        }
+
+        .figure {
+          img {
+            max-height: 330px;
+            object-fit: cover;
+          }
+        }
+
+        &:nth-child(odd) {
+          grid-column-end: 4;
+          grid-column-start: 1;
+        }
+
+        &:nth-child(even) {
+          grid-column-end: 9;
+          grid-column-start: 5;
+          padding-left: $spacing-small;
+
+          @media (max-width: $breakpoint-mobile) {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<div class="flyntComponent" id="{{ options.sectionId|lower|replace({' ': '-'})}}" is="flynt-slider-text-dropdown">
+  <script type="application/json">{{ jsonData|json_encode }}</script>
+  <div class="container">
+    <div class="content content-title small">{{ options.sectionId }}</div>
+    <div data-slider class="slider swiper-container">
+      <div class="swiper-wrapper">
+        {% for box in contentBoxes %}
+          <div class="slider-item swiper-slide" style="background-color: {{ box.panelTextboxbgcolor }};">
+            <div class="slider-item-title h2" type="button" aria-expanded="false" aria-controls="content-{{ loop.index }}">
+              {% if box.panelIcontitlebox %}
+              <img class="figure-image lazyload"
+                src="{{ box.panelIcontitlebox.src|resize(32) }}"
+                data-srcset="{{function('wp_get_attachment_image_srcset', box.panelIcontitlebox.id)}}"
+                data-sizes="auto">
+              {% endif %}
+              {{ box.panelTitlebox }}
+            </div>
+            <div class="slider-item-inner" aria-hidden="true" id="content-{{ loop.index }}">{{ box.panelTextbox|e('wp_kses_custom') }}</div>
+          </div>
+        {% endfor %}
+      </div>
+      <button type="button" data-slider-button="prev" class="slider-button slider-button--prev">
+        <i data-feather="arrow-left"></i>
+      </button>
+      <button type="button" data-slider-button="next" class="slider-button slider-button--next">
+        <i data-feather="arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

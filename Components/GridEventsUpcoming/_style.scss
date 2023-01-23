@@ -1,0 +1,83 @@
+[is='flynt-grid-events-upcoming'] {
+  padding: $spacing-large 0 !important;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-large !important;
+  }
+  
+  .preContent {
+    grid-column-end: 8;
+    grid-column-start: 2;
+    text-align: center;
+  }
+
+  .grid {
+    grid-column-end: 8;
+    grid-column-start: 2;
+
+    &-item {
+      text-decoration: none;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: flex;
+      flex-flow: column wrap;
+    }
+
+    &-image {
+      flex-shrink: 0; // IE11 bug fix (prevent image from stretchin')
+      grid-column-end: 2;
+      grid-column-start: 1;
+      position: relative;
+    }
+
+    &-inner {
+      @include reset-content-margins;
+      align-items: flex-start;
+      display: flex;
+      flex-flow: row wrap;
+      gap: $spacing-small;
+      margin-top: $spacing-large;
+
+      #{$heading-selectors} {
+        color: $color-headline;
+      }
+
+      &::before {
+        content: '↑';
+        font-size: 2.188rem;
+      }
+    }
+
+    &-title {
+      margin-bottom: 0;
+      text-decoration: none;
+    }
+  }
+
+  .eventCategory {
+    position: absolute;
+    right: $spacing-small;
+    top: $spacing-small;
+  }
+
+  .allPostsLink {
+    padding: 0 $spacing-small;
+    text-align: left;
+    text-transform: uppercase;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-top: $spacing-large;
+    }
+
+    .link {
+      text-decoration: none;
+    }
+  }
+}

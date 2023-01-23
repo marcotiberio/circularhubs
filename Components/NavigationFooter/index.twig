@@ -1,0 +1,25 @@
+<div class="flyntComponent" is="flynt-navigation-footer">
+  <div class="container">
+    <div class="left grid4">
+      {% if preTextLogo %}
+        <div class="preText">{{ preTextLogo|e }}</div>
+      {% endif %}
+      {% if logoFooter %}
+        <img class="logo lazyload"
+          src="{{ logoFooter.src|resize(32) }}"
+          data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
+          data-sizes="auto">
+      {% endif %}
+    </div>
+    <div class="right">
+      {% if contentHtml %}
+        <div class="content">{{ contentHtml|e('wp_kses_post') }}</div>
+      {% endif %}
+      {% if menu %}
+        <nav class="navigation" aria-label="{{ __("Footer", "flynt") }}">
+          {% include 'Partials/_menu.twig' with { 'items': menu.get_items, 'level': '0', 'maxLevel': maxLevel } only %}
+        </nav>
+      {% endif %}
+    </div>
+  </div>
+</div>

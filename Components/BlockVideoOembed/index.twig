@@ -1,0 +1,25 @@
+<div class="flyntComponent boxed" is="flynt-block-video-oembed">
+  {% if pageTitle or audioEmbed %}
+    <div class="preContent">
+      <div class="title h3">{{ pageTitle }}</div>
+      <div class="audio">
+        <div class="playButton">{{ audioEmbed }}</div>
+      </div>
+    </div>
+  {% endif %}
+  <div class="video">
+    <figure class="figure">
+      <img class="figure-image lazyload"
+        src="{{ posterImage.src|resize(32) }}"
+        data-srcset="{{function('wp_get_attachment_image_srcset', posterImage.id)}}"
+        data-sizes="auto"
+        alt="{{ posterImage.alt|e }}">
+    </figure>
+    <div class="video-player">
+      {{ video }}
+      {# <iframe src="https://player.vimeo.com/video/76979871?background=1&autoplay=1&loop=1&byline=0&title=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> #}
+      {# <div class="video-loader"></div>
+      <button class="video-playButton" type="button" aria-label="Play Video"></button> #}
+    </div>
+  </div>
+</div>

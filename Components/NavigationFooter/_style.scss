@@ -1,0 +1,54 @@
+[is='flynt-navigation-footer'] {
+  font-size: 0.8rem;
+
+  .container {
+    padding: $spacing-large;
+    text-align: center;
+
+    @media (min-width: $breakpoint-tablet) {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-large;
+      justify-content: space-between;
+
+      .left {
+        width: 50%;
+
+        .preText {
+          text-align: left;
+        }
+
+        .logo {
+          height: 70px;
+          width: auto;
+        }
+      }
+  
+      .right {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 50%;
+      }
+    }
+
+    .logo {
+      height: 70px;
+      margin: $spacing-small auto;
+      width: auto;
+    }
+  }
+
+  .content {
+    @include reset-content-margins;
+    margin: 10px 0 0;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0;
+    }
+  }
+
+  @import 'Partials/menu';
+}

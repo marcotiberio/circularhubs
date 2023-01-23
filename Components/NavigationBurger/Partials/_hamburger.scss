@@ -1,0 +1,54 @@
+.hamburger {
+  cursor: pointer;
+  display: block;
+  height: 22px;
+  margin-left: $spacing-small;
+  position: relative;
+  width: 22px;
+
+  &::after {
+    content: '';
+  }
+
+  &::after,
+  &-barPrimary,
+  &-barSecondary {
+    background-color: $black;
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
+      background-color 0.2s ease-in-out;
+    width: 22px;
+  }
+
+  
+
+  &-barPrimary,
+  &-barSecondary {
+    top: 6px;
+  }
+
+  &::after {
+    top: 14px;
+  }
+}
+
+&.flyntComponent-menuIsOpen .hamburger {
+  &::after {
+    opacity: 0;
+  }
+
+  &::after {
+    transform: scale(0) translateY(-8px);
+  }
+
+  &-barPrimary {
+    transform: rotate(45deg);
+  }
+
+  &-barSecondary {
+    transform: rotate(-45deg);
+  }
+}

@@ -1,0 +1,49 @@
+[is='flynt-block-text-image-repeater'] {
+  .content {
+    @include reset-content-margins;
+    width: 100%;
+
+    p:last-child {
+      margin: 0;
+    }
+
+    &-title {
+      grid-column-end: 9;
+      grid-column-start: 1;
+      margin-bottom: $spacing-large*2;
+      text-transform: uppercase;
+    }
+
+    &-text {
+      grid-column-end: 5;
+      grid-column-start: 1;
+
+      .panel-title {
+        grid-column-end: 2;
+        grid-column-start: 1;
+        padding-bottom: $spacing-large*2;
+
+        @media (max-width: $breakpoint-mobile) {
+          padding-bottom: 0;
+        }
+      }
+
+      .panel-text {
+        border-top: 1px solid $black;
+        grid-column-end: 6;
+        grid-column-start: 2;
+        padding-bottom: $spacing-large*2;
+        padding-top: $spacing-small;
+      }
+    }
+
+    &-image {
+      grid-column-end: 9;
+      grid-column-start: 6;
+
+      @media (max-width: $breakpoint-mobile) {
+        margin-top: $spacing-large;
+      }
+    }
+  }
+}

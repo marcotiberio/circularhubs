@@ -1,0 +1,30 @@
+{% if items|length > 0 %}
+  <div class="flyntComponent" is="flynt-grid-news-index">
+    <div class="container boxed">
+      <ul class="grid">
+        {% for item in items %}
+          <li class="grid-item {{ item.post_type }}">
+            <div class="content">
+              <a href="{{ item.link }}" class="content-link" title="{{ item.title }}">
+                <img class="content-image lazyload"
+                  src="{{ item.thumbnail.src|resize(32) }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
+                  data-sizes="auto">
+                <div class="content-inner">
+                  <h3 class="content-inner--title">{{ item.title }}</h3>
+                  <p class="content-excerpt">{{ item.preview.read_more(false).length(30) }}</p>
+                </div>
+              </a>
+              {# <footer class="content-footer">
+                <span class="content-readingTime">
+                  <i data-feather="clock"></i> {{ item.content | readingtime }} {{ labels.readingTime }}
+                </span>
+                <a href="{{ item.link }}" class="button button--link content-readMore" aria-hidden="true" tabindex="-1">{{ labels.readMore }}</a>
+              </footer> #}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}

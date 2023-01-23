@@ -1,0 +1,45 @@
+[is='flynt-block-filter'] {
+  margin-bottom: $spacing-small;
+  padding-bottom: $spacing-small;
+  padding-top: $spacing-small;
+  z-index: 1000;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-bottom: $spacing-small / 2;
+    padding-top: $spacing-small / 2;
+  }
+
+  .grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: flex;
+      flex-flow: row nowrap;
+      overflow: scroll;
+      padding: 0;
+    }
+
+    .filter {
+      color: rgba($color: $black, $alpha: 0.5);
+      flex-grow: 1;
+      padding: 0;
+      text-align: center;
+
+      @media (max-width: $breakpoint-mobile) {
+        padding: 0 ($spacing-small + 1px);
+      }
+      
+      &:hover {
+        color: $black;
+        text-decoration: none;
+      }
+    }
+  }
+}

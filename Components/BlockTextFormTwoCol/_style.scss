@@ -1,0 +1,115 @@
+[is='flynt-block-text-form-two-col'] {
+  .container {
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
+    }
+  }
+
+  h3,
+  .h3 {
+    color: $orange;
+  }
+
+  .content {
+    @include reset-content-margins;
+    width: 100%;
+
+    p:last-child {
+      margin: 0;
+    }
+
+    &-title {
+      text-transform: uppercase;
+    }
+
+    &-text {
+      grid-column-end: 5;
+      grid-column-start: 1;
+    }
+
+    &-form {
+      grid-column-end: 9;
+      grid-column-start: 5;
+
+      @media (max-width: $breakpoint-mobile) {
+        margin-top: $spacing-large;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .hf-fields-wrap {
+        .group-submit {
+          align-items: flex-start;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
+
+          p:first-child {
+            width: 50%;
+          }
+        }
+      }
+
+      
+  
+      .wpcf7 {
+        transform: translateY(1rem);
+
+        @media (min-width: $breakpoint-tablet + 1) {
+          transform: translateY(-1rem);
+        }
+
+        input {
+          margin-bottom: $spacing-large*2;
+        }
+
+        [type='checkbox'] {
+          margin-bottom: 0;
+        }
+
+        textarea {
+          border-bottom: 1px solid $black;
+          // border-left: 1px solid $black;
+          height: 6rem;
+        }
+  
+        .col-2 {
+          column-gap: $spacing-small;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      
+        .group-submit {
+          display: flex;
+          justify-content: flex-end;
+          width: 100%;
+      
+          br {
+            display: none;
+          }
+      
+          .wpcf7-submit {
+            background-color: transparent;
+            border-color: $black;
+            color: $black;
+            margin-bottom: $spacing-large;
+            width: fit-content;
+
+            &:hover,
+            &:focus {
+              background-color: $black;
+              border-color: $black;
+              color: $white;
+            }
+          }
+        }
+
+        .wpcf7-acceptance {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<div class="flyntComponent" is="flynt-block-credits">
+  <div class="container">
+    <div class="repeater">
+      <ul class="list">
+        {% for panel in repeaterPanels %}
+          <li class="panel">
+              <p>{{ panel.panelItemLeft|e }}</p>
+              <p>{{ panel.panelItemRight|e }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

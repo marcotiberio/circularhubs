@@ -1,0 +1,160 @@
+.overlay {
+  &-toggle {
+    font-size: 1rem;
+    left: calc(50vw - 105px);
+    position: fixed;
+    text-align: left;
+    text-transform: uppercase;
+    top: 40px;
+    width: fit-content;
+    z-index: 1011;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      left: auto;
+      right: $spacing-small;
+      top: $spacing-small;
+    }
+  }
+
+  &-close {
+    color: $white;
+    display: none;
+    font-size: 1rem;
+    left: calc(50vw - 100px);
+    position: fixed;
+    text-align: center;
+    text-transform: uppercase;
+    top: 40px;
+    width: fit-content;
+    z-index: 1011;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      left: auto;
+      right: $spacing-small;
+      top: $spacing-small;
+    }
+  }
+
+  &-about {
+    align-items: center;
+    background-color: $green;
+    color: $white;
+    display: none;
+    flex-flow: column;
+    font-size: 1.2rem;
+    height: 100vh;
+    justify-content: flex-start;
+    left: 0;
+    overflow-y: scroll;
+    padding: $spacing-large;
+    position: fixed;
+    top: 0;
+    width: 50vw;
+    z-index: 1002;
+
+    @media (max-width: $breakpoint-tablet) {
+      height: 100vh;
+      padding: 0 $spacing-large $spacing-large*2 $spacing-large;
+      width: 100vw;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0 $spacing-small $spacing-large*2 $spacing-small;
+    }
+
+    &--content {
+      margin-top: 20vh;
+      padding: 0 $spacing-large*1.5 $spacing-large;
+
+      @media (max-width: $breakpoint-tablet) {
+        margin-top: $spacing-large*3;
+        padding: 0 0 $spacing-large*2;
+      }
+
+      .text {
+        margin-bottom: $spacing-large*2;
+      }
+
+      .skills {
+        @include reset-list;
+        align-items: flex-start;
+        counter-reset: section;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: $spacing-large*2;
+
+        @media (max-width: $breakpoint-mobile) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        li {
+          border-top: 1px solid $green;
+          display: flex;
+          flex-flow: row;
+          min-height: 118px;
+          padding-bottom: $spacing-large;
+          padding-right: $spacing-large;
+          padding-top: $spacing-small;
+          position: relative;
+          vertical-align: baseline;
+
+          &::before {
+            color: $green;
+            content: counter(section);
+            counter-increment: section;
+            font-size: 0.875rem;
+            line-height: 0.875rem;
+            margin-right: 21px;
+            position: relative;
+            vertical-align: baseline;
+          }
+
+          &:nth-last-child(1),
+          &:nth-last-child(2),
+          &:nth-last-child(3) {
+            border-bottom: 1px solid $green;
+          }
+
+          &:nth-last-child(1) {
+            @media (max-width: $breakpoint-mobile) {
+              border-top: 0;
+            }
+          }
+        }
+      }
+
+      .bios {
+        align-items: flex-start;
+        column-gap: $spacing-large;
+        display: grid;
+        font-family: 'Rhetorik Serif Regular', serif;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: $spacing-large;
+        row-gap: $spacing-large;
+
+        @media (max-width: $breakpoint-tablet) {
+          grid-template-columns: 1fr;
+          row-gap: 0;
+        }
+      }
+  
+      a {
+        color: $white;
+      }
+    }
+  }
+}

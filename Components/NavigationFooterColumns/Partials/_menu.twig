@@ -1,0 +1,28 @@
+<nav class="menu">
+  <ul class="list">
+    {% for item in items %}
+      <li class="list-item">
+        <div class="list-title">
+          {% if item.url|trim != '#' %}
+            <a class="list-titleLink" href="{{ item.url }}" {{ item.target == '_blank' ? 'target="_blank" rel="nofollow noreferrer noopener"' }}>
+              {{ item.title|e }}
+            </a>
+          {% else %}
+            {{ item.title|e }}
+          {% endif %}
+        </div>
+        {% if item.children %}
+          <ul class="childList">
+            {% for child in item.children %}
+              <li class="childList-item h5">
+                <a class="list-link" href="{{ child.url|e('esc_url') }}" {{ child.target == '_blank' ? 'target="_blank" rel="nofollow noreferrer noopener"' }}>
+                  {{ child.title|e }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

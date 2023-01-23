@@ -1,0 +1,73 @@
+[is='flynt-list-icons'] {
+  .items {
+    @include reset-list;
+    @include grid(1, $gutter-vertical: ($gap * 2));
+
+    @media (min-width: $breakpoint-mobile) {
+      @include grid(2, center, $gutter-vertical: ($gap * 2));
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      @include grid(4, $gutter-vertical: ($gap * 2));
+    }
+  }
+
+  .feather {
+    height: auto;
+    width: 100%;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+
+    &-icon {
+      height: 45px;
+      width: 45px;
+    }
+
+    &-content {
+      @include reset-content-margins;
+      flex-grow: 1;
+      margin-top: 15px;
+    }
+
+    &-linkWrapper {
+      margin-top: 0.75rem;
+    }
+  }
+
+  .items--centered {
+    justify-content: center;
+    text-align: center;
+
+    .item {
+      &-icon {
+        align-items: center;
+        background-color: $color-background-hero;
+        border-radius: 50%;
+        display: flex;
+        height: 80px;
+        margin: 0 auto;
+        width: 80px;
+      }
+    }
+
+    .feather {
+      color: $color-background-light;
+      height: auto;
+      margin: 0 auto;
+      top: 0;
+      width: 40px;
+    }
+  }
+
+  &.themeHero {
+    .items--centered {
+      .item-icon {
+        background-color: $color-background-dark;
+      }
+    }
+  }
+}

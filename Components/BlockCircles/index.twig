@@ -1,0 +1,21 @@
+<div class="flyntComponent" is="flynt-block-circles">
+  <div class="container boxed">
+    {% for box in boxes %}
+      <div class="box" id="box-{{ loop.index }}">
+        <div class="box-inner box-inner--image box-front">
+          <figure class="figure">
+            <img class="figure-image lazyload"
+              src="{{ box.image.src|resize(32) }}"
+              data-srcset="{{function('wp_get_attachment_image_srcset', box.image.id)}}"
+              data-sizes="auto">
+          </figure>
+        </div>
+        <div class="box-inner-back">
+          {% if box.contentHtml %}
+            <div class="box-inner box-inner--content">{{ box.contentHtml|e('wp_kses_post') }}</div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

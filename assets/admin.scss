@@ -1,0 +1,7 @@
+@import
+  'styles/variables',
+  'styles/mixins',
+  'styles/editorStyles';
+
+// stylelint-disable-next-line scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-blacklist
+@import '../Components/**/_admin.scss';

@@ -1,0 +1,125 @@
+/**
+* 5.0 Layouts
+*
+*/
+
+/* stylelint-disable property-no-vendor-prefix */
+
+.boxed {
+  margin: 0 auto;
+  max-width: $content-max-width;
+  padding: $spacing-large*3 $spacing-large;
+  width: 100%;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin: 0;
+    max-width: 100%;
+    padding: $spacing-large*3 $spacing-large;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    margin: 0;
+    max-width: 100%;
+    padding: $spacing-large*3 $spacing-large;
+  }
+}
+
+.grid2 {
+  column-gap: $spacing-large;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: $spacing-large;
+  width: 100%;
+
+  @media (max-width: $breakpoint-mobile) {
+    column-gap: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid3 {
+  column-gap: $spacing-large;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: $spacing-large;
+  width: 100%;
+
+  @media (max-width: $breakpoint-mobile) {
+    column-gap: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid4 {
+  align-items: center;
+  column-gap: $spacing-large;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+
+  @media (max-width: $breakpoint-mobile) {
+    column-gap: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid5 {
+  column-gap: $spacing-large;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+
+  @media (max-width: $breakpoint-mobile) {
+    column-gap: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid8 {
+  column-gap: $spacing-large;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+
+  @media (max-width: $breakpoint-mobile) {
+    column-gap: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.background {
+  &White {
+    background: transparent;
+  }
+
+  &Orange {
+    background: linear-gradient(90deg, #e17a3f 0%, #dd5a3a 165.97%);
+    color: $white;
+  }
+
+  &Green {
+    background: linear-gradient(90deg, #58b14e -0.04%, #b8d484 165.69%);
+    color: $white;
+  }
+}
+
+.textGradient {
+  &Orange {
+    background: linear-gradient(90deg, #e17a3f 0%, #dd5a3a 165.97%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &Green {
+    background: linear-gradient(90deg, #58b14e -0.04%, #b8d484 165.69%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

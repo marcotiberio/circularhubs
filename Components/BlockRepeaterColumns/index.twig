@@ -1,0 +1,16 @@
+<div class="flyntComponent" id="{{ options.sectionId|lower|replace({' ': '-'})}}" {% if options.backgroundColor %} style="background-color: {{ options.backgroundColor }}" {% endif %} is="flynt-block-repeater-columns">
+  <div class="container grid8 boxed">
+    <div class="content content-title sectionId">{{ options.sectionId }}</div>
+    <div class="content content-repeater">
+      <div class="content-repeater--title content-repeater--title--{{ options.hideTitle }} h1">{{ repeaterTitle }}</div>
+      <ul class="list">
+        {% for panel in itemPanels %}
+            <li class="panel">
+              <div class="panel-title small">{{ panel.panelTitle }}</div>
+              <div class="panel-description">{{ panel.panelDescription }}</div>
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

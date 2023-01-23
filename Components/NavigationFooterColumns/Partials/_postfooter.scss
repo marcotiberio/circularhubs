@@ -1,0 +1,77 @@
+.postFooter {
+  align-items: center;
+  background-color: $white;
+  display: flex;
+  flex-flow: column;
+  height: 20vw;
+  justify-content: center;
+  margin: 0 auto;
+  padding: $spacing-large*2 $spacing-large;
+  width: 100%;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin: 0;
+    max-width: 100%;
+    padding: $spacing-large $spacing-small;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+    padding: $spacing-small*2 $spacing-small;
+  }
+
+  .claim {
+    font-size: 1.125rem;
+    text-align: center;
+  }
+
+  .social {
+    @include reset-content-margins;
+    margin-top: $spacing-large;
+  }
+
+  .socialList {
+    @include reset-list;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    @media (min-width: $breakpoint-tablet) {
+      justify-content: center;
+    }
+
+    &-link {
+      box-sizing: content-box;
+      display: block;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus {
+        svg {
+          opacity: 0.8;
+          transition: color 0.2s ease;
+        }
+      }
+    }
+
+    &-item {
+      display: inline-block;
+      margin: 0 $spacing-small/2;
+    }
+
+    svg {
+      display: block;
+      height: 100%;
+      max-width: 40px;
+      transition: color 0.2s ease;
+      width: auto;
+
+      @media (max-width: $breakpoint-mobile) {
+        max-width: 30px;
+      }
+    }
+  }
+}

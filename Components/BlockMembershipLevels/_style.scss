@@ -1,0 +1,67 @@
+[is='flynt-block-membership-levels'] {
+  .preContent {
+    grid-column-end: 4;
+    grid-column-start: 2;
+    text-align: left;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: $spacing-large;
+    }
+  }
+
+  .content {
+    grid-column-end: 8;
+    grid-column-start: 4;
+
+    #pmpro_levels {
+      column-gap: $spacing-large;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding-bottom: $spacing-large;
+
+      .entry {
+        padding: 0;
+      }
+
+      .entry-meta {
+        display: flex;
+        flex-flow: column-reverse wrap;
+
+        .pmpro_btn {
+          appearance: none;
+          background-color: transparent;
+          border: 1px solid $black;
+          color: $black;
+          cursor: pointer;
+          display: inline-block;
+          font-family: 'NB International', sans-serif;
+          font-size: 0.889rem;
+          font-weight: 400;
+          line-height: inherit;
+          margin-top: $spacing-large*2;
+          padding: $spacing-small $spacing-large;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: all 0.2s linear;
+          user-select: none;
+          width: fit-content;
+
+          &:disabled,
+          &--disabled {
+            cursor: default;
+            opacity: 0.65;
+            pointer-events: none;
+          }
+
+          &:hover,
+          &:focus {
+            background-color: $black;
+            border-color: $black;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

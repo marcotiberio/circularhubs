@@ -1,0 +1,24 @@
+[is='flynt-block-image-post'] {
+  .container {
+    grid-column-end: 7;
+    grid-column-start: 3;
+  }
+  
+  .figure {
+    margin: 0 auto;
+    min-height: 100%;
+    z-index: 900;
+
+    img {
+      object-fit: cover;
+    }
+
+    figcaption {
+      padding: 0 $spacing-large;
+
+      @media (max-width: $breakpoint-tablet) {
+        padding: 0 $spacing-small;
+      }
+    }
+  }
+}

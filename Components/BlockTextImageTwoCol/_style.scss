@@ -1,0 +1,33 @@
+[is='flynt-block-text-image-two-col'] {
+  .content {
+    @include reset-content-margins;
+    width: 100%;
+
+    p:last-child {
+      margin: 0;
+    }
+
+    &-title {
+      text-transform: uppercase;
+    }
+
+    &-text {
+      grid-column-end: 5;
+      grid-column-start: 2;
+    }
+
+    &-image {
+      grid-column-end: 9;
+      grid-column-start: 6;
+
+      @media (max-width: $breakpoint-mobile) {
+        margin-top: $spacing-large;
+      }
+    }
+
+    h3,
+    .h3 {
+      color: $orange;
+    }
+  }
+}

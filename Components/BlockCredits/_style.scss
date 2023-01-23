@@ -1,0 +1,40 @@
+[is='flynt-block-credits'] {
+  .repeater {
+    display: flex;
+    flex-flow: row wrap;
+
+    .list {
+      display: flex;
+      flex-flow: row wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      .panel {
+        border-bottom: 1px solid $black;
+        column-gap: $spacing-small;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: $spacing-small;
+        width: 100%;
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          border-bottom: 0;
+
+          p {
+            margin: 0;
+          }
+        }
+
+        p {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

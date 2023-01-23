@@ -1,0 +1,33 @@
+[is='flynt-block-post-header'] {  
+  .post-header {
+    margin: 0 auto;
+    padding-bottom: $spacing-small/2;
+
+    .featuredImage {
+      img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        transition: all 0.2s linear;
+      }
+    }
+
+    .right {
+      align-items: flex-start;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+
+      .title {
+        text-transform: uppercase;
+      }
+
+      .center {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: column wrap;
+        gap: $spacing-xlarge*4;
+        justify-content: space-between;
+      }
+    }
+  }
+}

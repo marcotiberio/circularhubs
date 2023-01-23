@@ -1,0 +1,12 @@
+[is='flynt-block-password-protection'] {
+  .container {
+    border: 1px solid $black;
+
+    .pillCircle {
+      border: 1px solid $black;
+      border-radius: 1rem;
+      display: inline-block;
+      padding: 5px 10px;
+    }
+  }
+}

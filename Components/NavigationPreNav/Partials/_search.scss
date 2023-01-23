@@ -1,0 +1,62 @@
+.searchForm {
+  align-content: center;
+  display: flex;
+  flex-grow: 0;
+  font-family: 'FuturaLT', sans-serif;
+  font-size: 0.7rem;
+  justify-content: flex-end;
+  margin-top: 0;
+
+  ::placeholder {
+    color: $white;
+    font-family: 'FuturaLT', sans-serif;
+    font-size: 0.7rem;
+    opacity: 1;
+  }
+  
+  &-field {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: row wrap;
+    }
+
+    .searchForm-box {
+      height: 25px;
+    }
+  }
+
+  &-input {
+    appearance: none;
+    background-color: transparent;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0;
+    border-right: 0;
+    border-top: 0;
+    color: $white;
+    font-family: inherit;
+    font-size: inherit;
+    margin-bottom: 0;
+    margin-top: 4px;
+    min-height: 17.5px;
+    padding: 0;
+  }
+
+  &-submit {
+    padding: 0;
+
+    #icons-search-white {
+      margin-top: 5px;
+      transform: scale(0.7);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

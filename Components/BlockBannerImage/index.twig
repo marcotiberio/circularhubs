@@ -1,0 +1,21 @@
+<div class="flyntComponent boxed" is="flynt-block-banner-image">
+  <div class="container">
+    {% if pageTitle or audioEmbed %}
+      <div class="preContent">
+        <div class="title h3">{{ pageTitle }}</div>
+        <div class="audio">
+          <div class="playButton">{{ audioEmbed }}</div>
+        </div>
+      </div>
+    {% endif %}
+    <figure class="figure">
+      <img class="figure-image lazyload"
+          src="{{ image.src }}"
+          data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+          data-sizes="auto">
+      {% if image.caption %}
+        <figcaption class="figure-caption">{{ image.caption|e }}</figcaption>
+      {% endif %}
+    </figure>
+  </div>
+</div>

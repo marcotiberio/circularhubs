@@ -1,0 +1,10 @@
+<div class="flyntComponent boxed" is="flynt-block-newsletter">
+  <div class="container grid8">
+    <div class="content">
+      {{ contentHtml|e('wp_kses_post') }}
+    </div>
+    <div class="newsletter">
+      {{ newsletter }}
+    </div>
+  </div>
+</div>

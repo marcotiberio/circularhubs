@@ -1,0 +1,29 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+<ul>
+    {% for category in categories %}
+        <li class="category--{{ category.slug }}">{{ category.title }}</li>
+    {% endfor %}
+</ul>
+<div class="grid grid-home grid4">
+  {% for post in latestPosts %}
+  <article class="grid-item grid-item--{{ post.category.slug() }}">
+    <a class="grid-item-link" href="{{ post.link }}">
+      {% if post.thumbnail %}
+      <div class="featuredInfo">
+        <p class="title">{{ post.title }}</p>
+      </div>
+      {% endif %}
+      <div class="featuredImage">
+        <img src="{{ post.thumbnail.src }}" />
+      </div>
+      <div class="featuredInfo">
+        <div class="date">{{ post.datePost|date("d.m.Y")|escape('wp_kses_post') }}</div>
+        <div class="post-type">{{ post.category() }}</div>
+      </div>
+    </a>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% if items|length > 0 %}
+  <div class="flyntComponent" is="flynt-grid-posts-related">
+    <div class="container boxed">
+      {% if labels.preContent %}
+        <div class="preContent h2">
+          {{ labels.preContent }}
+        </div>
+      {% endif %}
+      <ul class="grid grid8">
+        {% for item in items %}
+          <li class="grid-item {{ item.post_type }}">
+            <div class="content">
+              <a href="{{ item.link }}" class="content-link" title="{{ item.title }}">
+                <img class="content-image lazyload"
+                  src="{{ item.thumbnail.src|resize(32) }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
+                  data-sizes="auto">
+                <div class="content-inner">
+                  <div>
+                    <div class="h2 content-title" title="{{ item.title }}">{{ item.title }}</div>
+                    {% if item.eventDate or item.eventVenue %}
+                      <div>{{ item.eventDate|date("d.m.Y")|escape('wp_kses_post') }}</div>
+                      <div>{{ item.eventVenue }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+              </a>
+              {# <footer class="content-footer">
+                <span class="content-readingTime">
+                  <i data-feather="clock"></i> {{ item.content | readingtime }} {{ labels.readingTime }}
+                </span>
+                <a href="{{ item.link }}" class="button button--link content-readMore" aria-hidden="true" tabindex="-1">{{ labels.readMore }}</a>
+              </footer> #}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      {# <div class="allPostsLink">
+        <a href="{{ postTypeArchiveLink }}" class="button button--link">{{ labels.allPosts }}</a>
+      </div> #}
+    </div>
+  </div>
+{% endif %}

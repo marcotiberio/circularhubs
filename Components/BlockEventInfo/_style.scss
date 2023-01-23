@@ -1,0 +1,127 @@
+[is='flynt-block-event-info'] {
+  .container {
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-right: $spacing-small;
+    width: 100%;
+
+    .slider {
+      position: relative;
+      width: 100%;
+
+      &-item {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: (1/1) * 100%;
+        position: relative;
+      }
+
+      &-button-container {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+      }
+
+      &-button {
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        flex-flow: row-reverse wrap;
+        height: $spacing-large;
+        justify-content: center;
+        position: relative;
+        top: 50%;
+        transition: opacity 0.2s ease-out;
+        width: $spacing-large;
+        z-index: 10;
+
+        @media (min-width: $breakpoint-tablet) {
+          &:hover,
+          &:focus {
+            background-color: transparent;
+            border: 1px solid $black;
+          }
+        }
+
+        &.swiper-button-disabled {
+          pointer-events: none;
+        }
+
+        .feather {
+          color: $color-text;
+          height: auto;
+          top: 0;
+          width: 80%;
+        }
+      }
+    }
+
+    .socials {
+      grid-column-end: 3;
+      grid-column-start: 2;
+
+      .list {
+        @include reset-list;
+
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          width: fit-content;
+
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+
+          &::before {
+            content: '>';
+            margin-right: $spacing-small / 2;
+          }
+        }
+      }
+    }
+
+    .bio {
+      grid-column-end: 3;
+      grid-column-start: 5;
+
+      p:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .figure {
+      bottom: 0;
+      left: 0;
+      margin-bottom: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &-image {
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      &-caption {
+        background: rgba($color-background-dark, 0.5);
+        bottom: 0;
+        color: $color-background-light;
+        display: inline-block;
+        font-size: 0.8rem;
+        max-width: 450px;
+        padding: 0.25rem 0.5rem;
+        position: absolute;
+        right: 0;
+      }
+    }
+
+  }
+
+}

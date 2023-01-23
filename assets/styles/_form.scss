@@ -1,0 +1,62 @@
+/* stylelint-disable indentation */
+
+/* Custom styling for submission form */
+
+.customForm {
+    ::placeholder {
+        color: $white;
+        opacity: 1;
+    }
+
+    .content {
+        grid-column-end: 8;
+        grid-column-start: 2;
+    }
+
+    .hf-fields-wrap {
+        column-gap: $spacing-large;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: $spacing-large;
+        width: 100%;
+    
+        @media (max-width: $breakpoint-mobile) {
+            display: block !important;
+        }
+
+        label {
+            color: $white;
+            padding: 0 $spacing-large;
+
+            @media (max-width: $breakpoint-mobile) {
+                padding: 0 $spacing-small;
+            }
+        }
+
+        .col-left {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+        }
+
+        .col-right {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+        }
+
+        .dropdowns {
+            .dropdown {
+                display: flex;
+                flex-flow: column;
+            }
+        }
+
+        .submit-wrapper {
+            display: flex;
+            grid-column-end: 3;
+            grid-column-start: 1;
+            justify-content: center;
+        }
+    }
+}

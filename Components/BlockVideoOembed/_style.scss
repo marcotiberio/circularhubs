@@ -1,0 +1,159 @@
+[is='flynt-block-video-oembed'] {
+  .preContent {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: $spacing-small;
+
+    .title {
+      margin-bottom: 0;
+    }
+  }
+
+  .audio {
+    width: 30px;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 20px !important;
+    }
+
+    .playButton {
+      cursor: pointer;
+
+      div {
+        &:first-child {
+          display: inline-block;
+        }
+      }
+    }
+
+    .h5ap_standard_player {
+      margin: 0 !important;
+
+      .plyr__controls {
+        align-items: center !important;
+        display: inline-block !important;
+        justify-content: flex-start !important;
+        padding: 0 !important;
+
+        .plyr__control {
+          padding: 0;
+
+          &:hover,
+          &:focus {
+            background-color: transparent;
+            color: $black;
+          }
+
+          svg {
+            fill: $orange !important;
+            height: 30px !important;
+            width: 30px !important;
+
+            @media (max-width: $breakpoint-mobile) {
+              height: 20px !important;
+              width: 20px !important;
+            }
+          }
+        }
+
+        &__item {
+          &:first-child {
+            margin: 0 !important;
+            top: 2px;
+          }
+        }
+      }
+
+      .plyr__time--duration {
+        margin: 0;
+      }
+
+      .plyr__time--duration,
+      .plyr__progress__container,
+      .plyr__volume,
+      [data-plyr='download'] {
+        display: none !important;
+      }
+    }
+
+    .player {
+      display: none;
+    }
+
+    [type='range'] {
+      display: none !important;
+    }
+  }
+  
+  .video {
+    margin: 0 auto;
+    position: relative;
+
+    .figure {
+      background-color: $grey;
+      display: block;
+      margin-bottom: 0;
+    
+      &-image {
+        aspect-ratio: 16/9;
+
+        &--isHidden {
+          visibility: hidden;
+        }
+      }
+    }
+
+    &-player {
+      height: 0;
+      overflow: hidden;
+      padding-bottom: percentage(9 / 16);
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+
+      &--isLoading {
+        background: $black;
+        transition: all 1s linear;
+      
+        .figure {
+          opacity: 1;
+        }
+      }
+
+      &--isLoaded {
+        transition: all 1s linear;
+        z-index: 1;
+    
+        .figure {
+          opacity: 0;
+          transition: all 1s linear;
+          z-index: -1 !important;
+        }
+      
+        iframe {
+          opacity: 1;
+          transition: all 1s linear;
+        }
+      }
+  
+      iframe {
+        box-sizing: border-box;
+        height: 56.25vw;
+        left: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+
+        .vp-center {
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}

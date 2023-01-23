@@ -1,0 +1,135 @@
+[is='flynt-slider-medium-image'] {
+  .container {
+    align-items: flex-start;
+    column-gap: $spacing-small;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+
+    &-sliderLeft {
+      .slider {
+        grid-column-end: 3;
+        grid-column-start: 1;
+
+        @media (max-width: $breakpoint-tablet) {
+          grid-column-end: 5;
+          grid-column-start: 1;
+        }
+      }
+    }
+
+    &-sliderCenter {
+      .slider {
+        grid-column-end: 4;
+        grid-column-start: 2;
+
+        @media (max-width: $breakpoint-tablet) {
+          grid-column-end: 5;
+          grid-column-start: 1;
+        }
+      }
+    }
+
+    &-sliderRight {
+      .slider {
+        grid-column-end: 5;
+        grid-column-start: 3;
+
+        @media (max-width: $breakpoint-tablet) {
+          grid-column-end: 5;
+          grid-column-start: 1;
+        }
+      }
+    }
+    
+    .slider {
+      position: relative;
+      width: 100%;
+
+      &-item {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: (9/16) * 100%;
+        position: relative;
+      }
+
+      &-button-container {
+        align-items: center;
+        background-color: $white;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        // margin-top: -25px;
+      }
+
+      &-button {
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        flex-flow: row-reverse wrap;
+        height: 25px;
+        justify-content: center;
+        position: relative;
+        // top: 50%;
+        // transform: translateY(-50%);
+        transition: opacity 0.2s ease-out;
+        width: 25px;
+        z-index: 10;
+
+        @media (min-width: $breakpoint-tablet) {
+          &:hover,
+          &:focus {
+            background-color: transparent;
+            border: 1px solid $black;
+          }
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .feather {
+          color: $color-text;
+          height: auto;
+          top: 0;
+          width: 80%;
+        }
+      }
+
+      .figure {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+  
+        &-image {
+          height: 100%;
+          margin: 0;
+          object-fit: cover;
+          width: 100%;
+        }
+  
+        &-caption {
+          background-color: transparent;
+          bottom: 0;
+          color: $black;
+          display: inline-block;
+          font-size: 12px;
+          height: 15px;
+          left: 0;
+          padding: 5px 2.5px;
+          position: absolute;
+          text-align: center;
+          width: calc(100% - 5px);
+        }
+      }
+    }
+  }
+}

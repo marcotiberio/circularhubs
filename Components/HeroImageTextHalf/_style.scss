@@ -1,0 +1,68 @@
+[is='flynt-hero-image-text-half'] {
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-flow: row wrap;
+    height: 80vh;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-flow: column-reverse wrap;
+      height: auto;
+    }
+  }
+
+  .content {
+    align-items: center;
+    background-color: $green;
+    color: $white;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: $spacing-large*3;
+    width: 50%;
+    z-index: 1;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: $spacing-small*2;
+      width: 100%;
+    }
+  }
+
+  .figure {
+    height: 100%;
+    margin: 0;
+    position: relative;
+    width: 50%;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+    }
+
+    &-image {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlayText {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      padding: $spacing-small*3;
+      position: absolute;
+      top: 0;
+
+      @media (max-width: $breakpoint-tablet) {
+        padding: $spacing-small*2;
+      }
+    }
+  }
+
+  @media (max-width: $content-max-width - 1px) {
+    br {
+      content: '\00a0';
+    }
+  }
+}

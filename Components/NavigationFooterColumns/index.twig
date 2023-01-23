@@ -1,0 +1,63 @@
+<div class="flyntComponent" is="flynt-navigation-footer-columns">
+  <div class="container">
+    <div class="columns">
+      {% for column in columnsMenu %}
+        <div class="columns-menu">
+          <div class="title">{{ column.title }}</div>
+          <div class="list">{{ column.contentHtml|e('wp_kses_custom') }}</div>
+        </div>
+      {% endfor %}
+        {# {% if logotype %}
+        <div class="logotype">
+          <figure class="figure">
+            <img class="figure-image lazyload" src="{{ logotype.src|resize(540) }}">
+          </figure>
+        </div>
+        {% endif %} #}
+        {# <div class="credits-supporters">
+          <div class="supporters">
+            <p>Supported by</p>
+            <ul class="supportersList">
+              {% for item in repeaterSupporters %}
+                <li class="socialList-item">
+                  <a href="{{ item.supporterLink }}" rel="noreferrer noopener" target="_blank">
+                    <figure class="figure">
+                      <img class="figure-image lazyload" src="{{ item.image.src|resize(540) }}">
+                    </figure>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="credits">
+            {{ socialContentHtml|e('wp_kses_post') }}
+          </div>
+        </div> #}
+      {# <div class="columns-info">
+        <div class="logo">
+          <img class="logo-image" src="{{ logoFooter }}" alt="{{ logoFooter.alt }}">
+          <img class="claim-image" src="{{ claimFooter }}" alt="{{ claimFooter.alt }}">
+        </div>
+      </div>
+      <div class="columns-newsletter">
+        {{ formForm }}
+      </div> #}
+    {# {% include 'Partials/_backtotop.twig' %} #}
+  </div>
+  <div class="postFooter">
+    <div class="claim">{{ claimFooter }}</div>
+    <div class="social">
+      {% if social %}
+        <ul class="socialList">
+          {% for socials in social %}
+            <li class="socialList-item">
+              <a class="socialList-link" href="{{ socials.url }}" target="_blank" aria-label="{{ socials.platform.label }}">
+                {{- socials.icon -}}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>

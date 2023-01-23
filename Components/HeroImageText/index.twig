@@ -1,0 +1,13 @@
+<div class="flyntComponent" is="flynt-hero-image-text">
+  <img class="figure-image lazyload"
+    src="{{ posterImage.src|resize(32) }}"
+    data-srcset="{{function('wp_get_attachment_image_srcset', posterImage.id)}}"
+    data-sizes="auto">
+  {% if contentHtml %}
+    <div class="content grid8">
+      <div class="content-inner contentAlign--{{ contentAlignment }}">
+        {{ contentHtml }}
+      </div>
+    </div>
+  {% endif %}
+</div>

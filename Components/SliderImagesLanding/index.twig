@@ -1,0 +1,49 @@
+<div class="flyntComponent" is="flynt-slider-images-landing">
+  <script type="application/json">{{ jsonData|json_encode }}</script>
+  <div class="container">
+    <div class="infoBox">
+      {# <img class="logo-image" src="{{ logo.src }}" alt="{{ logo.alt }}"> #}
+      <div class="infoBox--content">
+        <div class="text">{{ contentHtml|e('wp_kses_custom')}}</div>
+        <div class="subscribe">
+          {% include 'Partials/_newsletter.twig' %}
+        </div>
+      </div>
+    </div>
+    <div data-slider class="slider swiper-container">
+      <div class="overlay-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1449" height="1448.4" viewBox="0 0 1449 1448.4">
+          <g id="_220627_TS_Icon_white" data-name="220627_TS_Icon_white" transform="translate(-275.6 -287)">
+            <path id="Path_1" data-name="Path 1" d="M1091,858.8,1287.2,346l-18.5-7.6-223.8,501c-5.4,13.1-19.4,9.1-19.4-4l-15-548.4h-20l-15,548.1c0,12.4-15,15.4-19.6,3.8L732.3,338.4,713.8,346,909.6,857.8C914,870,902,878,892.8,869L494.9,492.3l-14.1,14.1L857.4,904.3c9.6,9.7.6,21.7-11.2,16.7L334.5,725.3l-7.6,18.5L827.1,967.2c12,4.8,10,18.8-3.8,19.3l-547.7,25v20h1449V1011l-548.7-24.5c-13.8-.5-15.8-13.5-3.6-18.5l501.6-224-7.6-18.5L1153.4,921.7c-13.2,5.3-20.2-6.7-10.8-16.3l377.6-398.8-14.1-14.2L1107.5,869.8c-9.5,9.2-21.5,1.2-16.5-11Z" fill="#fff"/>
+            <path id="Path_2" data-name="Path 2" d="M1025.5,1116.3h-50l15,619.1h20Z" fill="#fff"/>
+          </g>
+        </svg>
+      </div>
+      <div class="swiper-wrapper">
+        {% for panel in repeaterSlider %}
+          <div class="slider-item swiper-slide">
+            <figure class="figure">
+              <img class="figure-image"
+                src="{{ panel.panelImage.src|resize(2560) }}"
+              {% if panel.panelImage.caption %} >
+                <figcaption class="figure-caption">{{ panel.panelImage.caption|e }}</figcaption>
+              {% endif %}
+            </figure>
+          </div>
+        {% endfor %}
+      </div>
+      {# <div class="slider-button-container">
+        <button type="button" data-slider-button="prev" class="slider-button slider-button--prev">
+          <i data-feather="arrow-left"></i>
+        </button>
+        <div data-slider-pagination class="slider-pagination swiper-pagination-fraction"></div>
+        <button type="button" data-slider-button="next" class="slider-button slider-button--next">
+          <i data-feather="arrow-right"></i>
+        </button>
+      </div> #}
+    </div>
+  </div>
+  <div class="overlay">
+    {% include 'Partials/_about.twig' %}
+  </div>
+</div>

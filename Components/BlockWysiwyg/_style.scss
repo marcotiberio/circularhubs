@@ -1,0 +1,21 @@
+[is='flynt-block-wysiwyg'] {
+  .container {
+    border-bottom: 1px solid $orange;
+    border-top: 1px solid $orange;
+  }
+  
+  .content {
+    @include reset-content-margins;
+    padding: $spacing-large $spacing-large*2;
+    text-align: justify;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-large $spacing-small;
+    }
+  }
+
+  h3,
+  .h3 {
+    color: $orange;
+  }
+}

@@ -1,0 +1,32 @@
+[is='flynt-list-logos'] {
+  padding: $spacing-small 0;
+
+  .preContent {
+    grid-column-end: 8;
+    grid-column-start: 2;
+  }
+
+  .content {
+    grid-column-end: 8;
+    grid-column-start: 2;
+
+    .list {
+      @include reset-list;
+      column-gap: $spacing-small;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: $spacing-small;
+
+      @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+  
+      .item {
+        height: auto;
+        max-width: 166px;
+        object-fit: cover;
+        width: auto;
+      }
+    }
+  }
+}

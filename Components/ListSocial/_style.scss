@@ -1,0 +1,80 @@
+[is='flynt-list-social'] {
+  background-color: $green;
+  padding: $spacing-small $spacing-large !important;
+  text-align: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-small;
+  }
+
+  .contact {
+    border: 1px solid $black;
+    font-size: 14px;
+    line-height: 1;
+    margin-right: $spacing-large;
+    padding: 5px;
+    text-decoration: none;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-right: $spacing-small;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $black;
+      color: $green;
+      text-decoration: none;
+    }
+  }
+
+  .socials {
+    .list {
+      display: flex;
+      flex-flow: row wrap;
+      grid-column-end: 9;
+      grid-column-start: 1;
+      list-style: none;
+      margin: 0;
+      overflow: scroll;
+      padding: 0;
+
+      @media (max-width: $breakpoint-tablet) {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+      }
+
+      li {
+        font-size: 14px;
+        margin-right: $spacing-large;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          margin-right: $spacing-small;
+        }
+
+        a {
+          align-items: center;
+          display: flex;
+          line-height: 1.2;
+          text-decoration: none;
+          width: fit-content;
+  
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+  
+          // &::before {
+          //   content: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11.46" height="11.46" viewBox="0 0 11.46 11.46"%3E%3Cg id="Group_43" data-name="Group 43" transform="translate(-1410.69 -282.05)"%3E%3Cline id="Line_8" data-name="Line 8" x2="9" transform="translate(1412.65 282.55)" fill="none" stroke="%23000" stroke-linecap="square" stroke-width="1"/%3E%3Cline id="Line_9" data-name="Line 9" x2="9" transform="translate(1421.65 282.65) rotate(90)" fill="none" stroke="%23000" stroke-linecap="square" stroke-width="1"/%3E%3Cline id="Line_12" data-name="Line 12" x2="15" transform="translate(1411.043 293.157) rotate(-45)" fill="none" stroke="%23000" stroke-width="1"/%3E%3C/g%3E%3C/svg%3E%0A');
+          //   display: inline-block;
+          //   margin-right: $spacing-small / 2;
+          //   text-decoration: none;
+          // }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+[is='flynt-hero-image-text'] {
+  // margin-bottom: $spacing-large*3;
+  position: relative;
+
+  .figure-image {
+    height: auto;
+    max-height: calc(100vh - 85px);
+    object-fit: cover;
+
+    @media (max-width: $breakpoint-tablet) {
+      aspect-ratio: 3/4;
+    }
+  }
+
+  .content {
+    color: $white;
+    height: 100%;
+    left: 0;
+    padding: $spacing-large;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: $spacing-small;
+      width: 100%;
+    }
+
+    &-inner {
+      display: flex;
+      flex-flow: column wrap;
+      height: 100%;
+    }
+
+    .contentAlign--right {
+      justify-content: flex-end;
+      grid-column-end: 4;
+      grid-column-start: 1;
+    }
+
+    .contentAlign--center {
+      justify-content: center;
+      grid-column-end: 7;
+      grid-column-start: 3;
+    }
+
+    .contentAlign--right {
+      justify-content: flex-end;
+      grid-column-end: 9;
+      grid-column-start: 5;
+    }
+  }
+
+  @media (max-width: $content-max-width - 1px) {
+    br {
+      content: '\00a0';
+    }
+  }
+}

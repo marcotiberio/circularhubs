@@ -1,0 +1,108 @@
+[is='flynt-block-team'] {
+  height: auto;
+  padding-bottom: 0;
+  padding-top: $spacing-large*2;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-top: $spacing-large;
+  }
+
+  h3,
+  .h3 {
+    color: $orange;
+  }
+
+  .box {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    &-inner {
+      @include reset-content-margins('top');
+      height: 100%;
+
+      &--image {
+        margin-bottom: $spacing-small;
+        
+        @media (min-width: $breakpoint-mobile + 1) {
+          margin-bottom: 0;
+          width: 50%;
+        }
+
+        figure {
+          margin: 0;
+
+          @media (max-width: $breakpoint-mobile) {
+            margin-bottom: $spacing-small;
+          }
+      
+          img {
+            aspect-ratio: 1/1;
+            border: 10px solid $orange;
+            border-radius: 50%;
+            height: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            width: 100%;
+        
+            @media (max-width: $breakpoint-mobile + 1) {
+              max-height: 375px;
+            }
+
+            @media (max-width: $breakpoint-tablet + 1) {
+              max-height: 400px;
+            }
+          }
+        }
+      }
+
+      &--content {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+
+        @media (min-width: $breakpoint-mobile + 1) {
+          width: 50%;
+        }
+
+        .button {
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  .box {
+    &--imageLeft {
+      flex-flow: row wrap;
+
+      .box-inner--image {
+        @media (min-width: $breakpoint-mobile + 1) {
+          padding-right: $spacing-small*2;
+        }
+      }
+
+      .box-inner--content {
+        @media (min-width: $breakpoint-mobile + 1) {
+          padding-left: $spacing-small*2;
+        }
+      }
+    }
+
+    &--imageRight {
+      flex-flow: row-reverse wrap;
+
+      .box-inner--image {
+        @media (min-width: $breakpoint-tablet) {
+          padding-left: $spacing-small*2;
+        }
+      }
+
+      .box-inner--content {
+        @media (min-width: $breakpoint-tablet) {
+          padding-right: $spacing-small*2;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="flyntComponent" is="flynt-block-image-small">
+  <div class="container">
+    <div class="imageWrapper imageWrapper-{{imagePosition}}">
+      <figure class="figure">
+        <img class="figure-image lazyload"
+          src="{{ image.src }}"
+          data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+          data-sizes="auto">
+        {# <img class="figure-image lazyload"
+          src="{{ image.src|resize(1920) }}"
+          alt="{{ image.alt|e }}"> #}
+        {% if image.caption %}
+          <figcaption class="figure-caption">{{ image.caption|e }}</figcaption>
+        {% endif %}
+      </figure>
+    </div>
+  </div>
+</div>

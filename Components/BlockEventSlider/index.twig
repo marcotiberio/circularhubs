@@ -1,0 +1,26 @@
+<div class="flyntComponent" is="flynt-block-event-slider">
+  <script type="application/json">{{ jsonData|json_encode }}</script>
+  <div class="container">
+    <div data-slider class="slider swiper-container">
+      <div class="swiper-wrapper">
+        {% for panel in repeaterSlider %}
+          <div class="slider-item swiper-slide">
+            <figure class="figure">
+              <img class="figure-image lazyload"
+                src="{{ panel.panelImage.src|resize(1200) }}">
+            </figure>
+            {# <figcaption class="figure-caption">{{ panel.panelImage.caption|e }}</figcaption> #}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="slider-button-container">
+        <button type="button" data-slider-button="prev" class="slider-button slider-button--prev">
+          <i data-feather="arrow-left"></i>
+        </button>
+        <button type="button" data-slider-button="next" class="slider-button slider-button--next">
+          <i data-feather="arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

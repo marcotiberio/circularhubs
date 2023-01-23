@@ -1,0 +1,19 @@
+<form class="searchForm" role="search" action="{{ bloginfo('url') }}">
+  <div class="searchForm-field">
+    <div class="searchForm-box">
+      <label class="visuallyHidden" for="searchForm-input">{{ searchPlaceholder }}</label>
+      <input name="s" id="searchForm-input" class="searchForm-input" type="search" required placeholder="" value="{{ searchQuery }}">
+    </div>
+    <button class="searchForm-submit" type="submit">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14.187" height="14.854" viewBox="0 0 14.187 14.854">
+        <g id="icons-search-black" transform="translate(0 0.5)">
+          <g id="Group_6" data-name="Group 6" transform="translate(0.5)">
+            <g id="Group_5" data-name="Group 5">
+              <path id="Path_63" data-name="Path 63" d="M5.667,0a5.667,5.667,0,1,0,5.667,5.667A5.667,5.667,0,0,0,5.667,0M9.333,10l4,4" fill="none" stroke="#000" stroke-width="1" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </button>
+  </div>
+</form>

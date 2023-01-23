@@ -1,0 +1,75 @@
+// NOTE: overwriting wp defaults
+@media screen and (max-width: 600px) {
+  // stylelint-disable-next-line selector-max-id
+  #wpadminbar {
+    position: fixed;
+  }
+}
+
+[is='flynt-navigation-burger'] {
+  $navigation-height: 50px;
+  background: $white;
+  left: 0;
+  padding: 0;
+  position: fixed;
+  right: auto;
+  top: 0;
+  width: 100%;
+  z-index: 1010;
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    display: none;
+  }
+
+  .container {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    z-index: 99;
+
+    &-inner {
+      align-items: center;
+      display: flex;
+      // height: $navigation-height;
+      justify-content: space-between;
+      // left: 0;
+      margin: 0 auto;
+      padding: $spacing-large;
+      // position: fixed;
+      // right: 0;
+      // top: 0;
+      width: 100vw;
+      // z-index: 100;
+
+      .left {
+        width: 60%;
+      }
+
+      .right {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        width: 40%;
+
+        // .searchForm,
+        // .hamburger {
+        //   width: calc(50% - 15px);
+        // }
+      }
+    }
+
+    .admin-bar & {
+      top: 46px;
+
+      @media (min-width: 783px) {
+        top: 32px;
+      }
+    }
+  }
+
+  @import 'Partials/logo';
+  @import 'Partials/hamburger';
+  @import 'Partials/search';
+  @import 'Partials/menu';
+}

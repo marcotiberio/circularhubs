@@ -1,0 +1,107 @@
+[is='flynt-grid-events-related'] {
+  padding-bottom: $spacing-large*2 !important;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-bottom: $spacing-large !important;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-bottom: $spacing-small*2 !important;
+  }
+
+  .preContent {
+    margin-bottom: $spacing-small*2;
+
+    .product-info {
+      .title {
+        margin-bottom: $spacing-small/2;
+      }
+
+      .featuredImage {
+        margin-top: $spacing-large;
+      }
+    }
+  }
+  
+  .grid {
+    @include reset-list;
+    margin-top: $spacing-large*4;
+
+    // @media (max-width: $breakpoint-tablet) {
+    //   column-gap: $spacing-large*2;
+    //   grid-template-columns: repeat(3, 1fr);
+    //   row-gap: $spacing-large*2;
+    // }
+
+    // @media (max-width: $breakpoint-mobile) {
+    //   column-gap: $spacing-large;
+    //   grid-template-columns: repeat(2, 1fr);
+    //   row-gap: $spacing-large;
+    // }
+
+    &-item {
+      &:nth-child(odd) {
+        grid-column-end: 5;
+        grid-column-start: 2;
+      }
+
+      &:nth-child(even) {
+        grid-column-end: 8;
+        grid-column-start: 5;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+
+    &-link {
+      text-decoration: none;
+    }
+
+    &-image {
+      aspect-ratio: 3/2;
+      object-fit: cover;
+      transition: all 0.2s linear;
+    }
+
+    &-inner {
+      @include reset-content-margins;
+      align-items: flex-start;
+      display: flex;
+      flex-flow: row wrap;
+      gap: $spacing-small;
+
+      #{$heading-selectors} {
+        color: $color-headline;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        padding-left: 0;
+        padding-top: 23px;
+      }
+
+      &::before {
+        content: '↑';
+        font-size: 2.188rem;
+      }
+    }
+
+    &-title {
+      margin-bottom: 0;
+      text-decoration: none;
+    }
+  }
+
+  .allPostsLink {
+    padding-top: 1.5rem;
+    text-align: center;
+
+    @media (min-width: $breakpoint-desktop) {
+      padding-top: 3rem;
+    }
+  }
+}

@@ -1,0 +1,175 @@
+[is='flynt-block-circles'] {
+  height: auto;
+  padding-bottom: $spacing-large*2;
+  padding-top: $spacing-large*2;
+
+  .container {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint-desktop - 1) {
+      column-gap: $spacing-small;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: $spacing-small;
+    }
+  }
+
+  .box {
+    // align-items: flex-start;
+    // display: flex;
+    // flex-flow: row wrap;
+    // justify-content: space-between;
+    // margin-bottom: $spacing-large*2;
+    background-color: transparent;
+    border-radius: 50%;
+    height: 300px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    text-decoration: none;
+    transition: all 0.2s linear;
+    width: 300px;
+
+    @media (max-width: $breakpoint-desktop - 1) {
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+
+    &-inner {
+      @include reset-content-margins;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      transform-style: preserve-3d;
+      transition: transform 0.2s linear;
+      width: 100%;
+
+      &--image {
+        backface-visibility: hidden;
+        border-radius: 50%;
+        height: 100%;
+        margin-bottom: $spacing-small;
+        position: absolute;
+        width: 100%;
+
+        @media (max-width: $breakpoint-desktop - 1) {
+          position: relative;
+        }
+
+        figure {
+          border-radius: 50%;
+          margin: 0;
+      
+          img {
+            border-radius: 50%;
+            object-fit: cover;
+            
+            @media (max-width: $breakpoint-tablet) {
+              height: auto;
+            }
+          }
+        }
+      }
+
+      &-back {
+        align-items: center;
+        backface-visibility: hidden;
+        background-color: $white;
+        border-radius: 50%;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        padding: $spacing-large*2 !important;
+        position: absolute;
+        text-align: center;
+        transform: rotateY(180deg);
+        transition: transform 0.2s linear;
+        width: 100%;
+
+        @media (max-width: $breakpoint-desktop - 1) {
+          display: none;
+          position: relative;
+        }
+      }
+
+      &--content {
+        background-color: $white;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.2s linear;
+
+        @media (max-width: $breakpoint-desktop - 1) {
+          display: none;
+        }
+
+        .button {
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  .box {
+    @media (min-width: $breakpoint-desktop) {
+      &:nth-child(2) {
+        transform: translate(10%, 0%);
+      }
+  
+      &:nth-child(2) {
+        transform: translate(50%, -25%);
+      }
+      
+      &:nth-child(3) {
+        transform: translate(25%, 50%);
+      }
+      
+      &:nth-child(4) {
+        transform: translate(35%, 20%);
+      }
+      
+      &:nth-child(5) {
+        transform: translate(30%, 0%);
+      }
+      
+      &:nth-child(6) {
+        transform: translate(33%, 80%);
+      }
+      
+      &:nth-child(7) {
+        transform: translate(5%, 50%);
+      }
+  
+      &:nth-child(8) {
+        transform: translate(0%, 30%);
+      }
+      
+      &:nth-child(9) {
+        transform: translate(-20%, 90%);
+      }
+      
+      &:nth-child(10) {
+        transform: translate(80%, 50%);
+      }
+    }
+  }
+
+  .box {
+    &:hover {
+      background-color: $white;
+      border: 2.5px solid $orange;
+
+      .box-inner {
+        transform: rotateY(180deg);
+      }
+  
+      .box-inner--content {
+        opacity: 1;
+        transition: all 0.2s linear;
+      }
+    }
+  }
+}
