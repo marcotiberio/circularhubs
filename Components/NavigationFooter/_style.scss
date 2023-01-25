@@ -2,42 +2,42 @@
   font-size: 0.8rem;
 
   .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-large;
+    justify-content: space-between;
     padding: $spacing-large;
     text-align: center;
 
-    @media (min-width: $breakpoint-tablet) {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      gap: $spacing-large;
-      justify-content: space-between;
+    .left {
+      margin: 0;
+      width: 50%;
 
-      .left {
-        width: 50%;
+      @media (max-width: $breakpoint-mobile) {
+        margin: auto;
+      }
 
-        .preText {
-          text-align: left;
-        }
+      .preText {
+        text-align: left;
 
-        .logo {
-          height: 70px;
-          width: auto;
+        @media (max-width: $breakpoint-mobile) {
+          text-align: center;
         }
       }
-  
-      .right {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 50%;
+
+      .logo {
+        height: 70px;
+        width: auto;
+
+        @media (max-width: $breakpoint-mobile) {
+          margin: 10px auto;
+        }
       }
     }
 
-    .logo {
-      height: 70px;
-      margin: $spacing-small auto;
-      width: auto;
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
     }
   }
 

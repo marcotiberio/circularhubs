@@ -18,65 +18,19 @@ $(document).ready(function () {
   })
 })
 
-$(document).ready(function () {
-  $('.accessibility-toggle').click(function () {
-    $('.accessibility').toggleClass('inView')
-  })
-  $('.blackWhite').click(function () {
-    $('html').toggleClass('high-contrast')
-  })
-  $('.fontSizebigger').click(function () {
-    $('html').toggleClass('font-bigger')
-    $('html').removeClass('font-smaller')
-  })
-  $('.fontSizesmaller').click(function () {
-    $('html').toggleClass('font-smaller')
-    $('html').removeClass('font-bigger')
-  })
-})
-
-$(document).ready(function () {
-  $('.overlay-toggle').click(function () {
-    $('.pageWrapper').toggleClass('about-open')
-    $('.overlay-toggle').toggle()
-    $('.overlay-close').toggle()
-    $('.overlay-about').toggle()
-  })
-  $('.overlay-close').click(function () {
-    $('.pageWrapper').toggleClass('about-open')
-    $('.overlay-toggle').toggle()
-    $('.overlay-close').toggle()
-    $('.overlay-about').toggle()
-  })
-})
-
-// Play Button
-$(document).ready(function () {
-  $('.playButton').click(function () {
-    $('.player').toggle()
-  })
-})
-
 // Filters
-var itemsTopic = $('.grid-item')
+var item = $('.grid-item')
 $('.filterSection .category').on('click', function (e) {
   e.preventDefault()
   var $this = $(this)
-  var catTopic = $this.attr('data-term')
-  itemsTopic.filter(':visible').hide()
-  itemsTopic.filter('[data-term="' + catTopic + '"]').show()
-  $this.toggleClass('active')
-  console.log(catTopic)
+  var category = $this.attr('data-term')
+  item.filter(':visible').hide()
+  item.filter('[data-term="' + category + '"]').show()
+  $this.addClass('active')
+  $('.category').not($this).removeClass('active')
+  console.log(category)
 })
 
-// Filters
-// var itemsFormat = $('.grid-item')
-// $('.filterSection .category').on('click', function (e) {
-//   e.preventDefault()
-//   var $this = $(this)
-//   var catFormat = $this.attr('data-format')
-//   itemsFormat.filter(':visible').hide()
-//   itemsFormat.filter('[data-format="' + catFormat + '"]').show()
-//   $this.toggleClass('active')
-//   console.log(catFormat)
-// })
+$('.filterSection .category--all').on('click', function (e) {
+  $('.grid-item').show()
+})
