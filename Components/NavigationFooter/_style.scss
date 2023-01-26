@@ -1,5 +1,5 @@
 [is='flynt-navigation-footer'] {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 
   .container {
     align-items: center;
@@ -10,11 +10,24 @@
     padding: $spacing-large;
     text-align: center;
 
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
+    }
+
     .left {
       margin: 0;
       width: 50%;
 
+      @media (max-width: $breakpoint-tablet) {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        gap: $spacing-small;
+        justify-content: flex-start;
+      }
+
       @media (max-width: $breakpoint-mobile) {
+        justify-content: center;
         margin: auto;
       }
 
@@ -36,8 +49,23 @@
       }
     }
 
-    @media (max-width: $breakpoint-mobile) {
-      display: block;
+    .right {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin: 0;
+      width: 50%;
+
+      @media (max-width: $breakpoint-tablet) {
+        gap: $spacing-small;
+        justify-content: center;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        margin: 0 auto;
+        width: 100%;
+      }
     }
   }
 

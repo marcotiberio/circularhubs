@@ -64,6 +64,10 @@
         align-items: center;
         grid-column-end: 8;
         grid-column-start: 2;
+
+        @media (max-width: $breakpoint-tablet) {
+          grid-column-start: 1;
+        }
       }
     }
   }
