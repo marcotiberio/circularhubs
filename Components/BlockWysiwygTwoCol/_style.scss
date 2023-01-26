@@ -19,14 +19,22 @@
         grid-column-end: 5;
         grid-column-start: 2;
 
+        @media (max-width: $breakpoint-tablet) {
+          grid-column-start: 1;
+        }
+
         @media (max-width: $breakpoint-mobile) {
           margin-top: 1.2rem;
         }
       }
   
       &-right {
-        grid-column-end: 5;
-        grid-column-start: 8;
+        grid-column-end: 8;
+        grid-column-start: 5;
+
+        @media (max-width: $breakpoint-tablet) {
+          grid-column-start: 2;
+        }
 
         @media (max-width: $breakpoint-mobile) {
           margin-top: 1.2rem;

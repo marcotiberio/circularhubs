@@ -1,11 +1,15 @@
 [is='flynt-grid-posts-premium'] {
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-tablet) {
     padding: $spacing-large !important;
   }
 
   .filterSection {
     grid-column-end: 8;
     grid-column-start: 2;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-column-start: 1;
+    }
 
     &--inner {
       @include reset-list;
@@ -83,6 +87,10 @@
     grid-column-start: 2;
     padding: $spacing-large*3 0;
     row-gap: $spacing-large;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-column-start: 1;
+    }
 
     &-item {
       flex-grow: 0;

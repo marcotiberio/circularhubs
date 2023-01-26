@@ -8,6 +8,10 @@
     object-fit: cover;
 
     @media (max-width: $breakpoint-tablet) {
+      aspect-ratio: 4/3;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
       aspect-ratio: 3/4;
     }
   }
@@ -31,6 +35,10 @@
       display: flex;
       flex-flow: column wrap;
       height: 100%;
+
+      @media (max-width: $breakpoint-tablet) {
+        grid-column-start: 1 !important;
+      }
     }
 
     .contentAlign--right {
