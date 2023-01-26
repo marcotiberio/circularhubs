@@ -56,6 +56,15 @@ function getACFLayout()
                 'media_upload' => 0,
                 'required' => 0,
                 'toolbar' => 'full'
+            ],
+            [
+                'label' => __('Link', 'flynt'),
+                'name' => 'buttonLink',
+                'type' => 'link',
+                'return_format' => 'array',
+                'wrapper' =>  [
+                    'width' => '100',
+                ]
             ]
         ]
     ];
