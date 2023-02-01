@@ -1,126 +1,88 @@
 [is='flynt-grid-posts-latest'] {
-  padding-bottom: $spacing-large*2 !important;
-
-  @media (max-width: $breakpoint-mobile) {
-    padding-bottom: $spacing-large !important;
-  }
+  padding: $spacing-large*3 0 !important;
 
   @media (max-width: $breakpoint-tablet) {
-    padding-bottom: $spacing-small*2 !important;
-  }
-
-  .preContent {
-    margin-bottom: $spacing-small*2;
-
-    .product-info {
-      .title {
-        margin-bottom: $spacing-small/2;
-      }
-
-      .featuredImage {
-        margin-top: $spacing-large;
-      }
-    }
+    padding: $spacing-large !important;
   }
   
-  .grid {
-    @include reset-list;
-    column-gap: $spacing-large*5;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: $spacing-large*4;
-    row-gap: $spacing-large*5;
+  .preContent {
+    grid-column-end: 8;
+    grid-column-start: 2;
+    text-align: center;
 
     @media (max-width: $breakpoint-tablet) {
-      column-gap: $spacing-large*2;
-      grid-template-columns: repeat(3, 1fr);
-      row-gap: $spacing-large*2;
+      grid-column-start: 1;
     }
+  }
 
-    @media (max-width: $breakpoint-mobile) {
-      column-gap: $spacing-large;
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: $spacing-large;
+  .grid {
+    grid-column-end: 8;
+    grid-column-start: 2;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-column-start: 1;
     }
 
     &-item {
-      &:hover {
-        // .featuredImage {
-        //   border-left: 1px solid $orange;
-        //   border-right: 1px solid $orange;
-        //   border-top: 1px solid $orange;
-        //   transition: all 0.2s linear;
-        // }
-
-        .figure {
-          border-left: 1px solid $orange;
-          border-right: 1px solid $orange;
-          border-top: 1px solid $orange;
-          // opacity: 0;
-          // transition: all 0.2s linear;
-
-          &-image {
-            transform: scale(0.9);
-          }
-        }
-      }
+      text-decoration: none;
     }
   }
 
   .content {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
+    flex-flow: column wrap;
+    width: 100%;
 
-    &-link {
-      text-decoration: none;
+    @media (max-width: $breakpoint-mobile) {
+      display: flex;
+      flex-flow: column wrap;
     }
 
-    // .featuredImage {
-    //   aspect-ratio: 1/1;
-    //   background-position: center;
-    //   background-repeat: repeat;
-    //   background-size: cover;
-    //   display: block;
-    //   max-width: 100%;
-    //   transition: all 0.2s linear;
-    //   width: 100%;
-    // }
+    &-image {
+      grid-column-end: 2;
+      grid-column-start: 1;
+      position: relative;
 
-    .figure {
-      aspect-ratio: 1/1;
-      background-color: $white;
-      flex-shrink: 0; // IE11 bug fix (prevent image from stretchin')
-      margin: 0;
-      overflow: hidden;
-      padding-bottom: $spacing-large;
-      // transition: all 0.2s linear;
-      
-      &-image {
-        aspect-ratio: 1/1;
-        object-fit: contain;
-        transition: all 0.2s linear;
+      img {
+        aspect-ratio: 3/2;
+        height: 100%;
+        object-fit: cover;
       }
     }
 
     &-inner {
       @include reset-content-margins;
-      border-top: 1px solid $orange;
-      padding-top: $spacing-small;
+      align-items: flex-start;
+      display: flex;
+      flex-flow: row wrap;
+      gap: $spacing-small;
+      margin-top: $spacing-large;
+
+      #{$heading-selectors} {
+        color: $color-headline;
+      }
+
+      &::before {
+        content: '↑';
+        font-size: 1.7rem;
+      }
     }
 
-    .title {
-      text-transform: uppercase;
+    &-title {
+      margin-bottom: 0;
+      text-decoration: none;
     }
   }
 
-  .allPostsLink {
-    padding-top: 1.5rem;
-    text-align: center;
+  .eventCategory {
+    position: absolute;
+    right: $spacing-small;
+    top: $spacing-small;
+  }
 
-    @media (min-width: $breakpoint-desktop) {
-      padding-top: 3rem;
-    }
+  .allPostsLink {
+    margin-top: $spacing-large*4;
+    padding: 0 $spacing-small;
+    text-align: center;
   }
 }

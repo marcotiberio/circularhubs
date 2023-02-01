@@ -1,49 +1,40 @@
 {% if items|length > 0 %}
-  <div class="flyntComponent" is="flynt-grid-posts-latest">
-    <div class="container boxed">
-      <div class="preContent">
-        <div class="product-info">
-          <div class="h3 title">{{ post.title }}</div>
-          <div class="description">{{collectionDescription|e('wp_kses_custom') }}</div>
-          <figure class="figure featuredImage">
-            <img class="figure-image lazyload"
-              src="{{ post.thumbnail.src|resize(32) }}"
-              data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
-              data-sizes="auto"
-              alt="{{ post.title }}">
-              {% if post.thumbnail.caption %}
-                <figcaption class="figure-caption">{{ post.thumbnail.caption|e }}</figcaption>
-              {% endif %}
-          </figure>
-        </div>
-      </div>
-      <ul class="grid">
+  <div class="flyntComponent" id="{{ sectionId|lower|replace({' ': '-'})}}" is="flynt-grid-posts-latest">
+    <div class="sectionId">{{ sectionId }}</div>
+    <div class="container grid8 boxed">
+      {% if preContentHtml %}
+        <div class="preContent h2">{{ preContentHtml|e('wp_kses_post') }}</div>
+      {% endif %}
+      <div class="grid grid2">
         {% for item in items %}
-          <li class="grid-item {{ item.post_type }}">
+          <a href="{{ item.link }}" class="grid-item">
             <div class="content">
-              <a href="{{ item.link }}" class="content-link" title="{{ item.title }}">
-                <img class="content-image lazyload"
-                  src="{{ item.thumbnail.src|resize(32) }}"
+              <div class="content-image">
+                <img class="lazyload"
+                  src="{{ item.thumbnail.src }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
-                  data-sizes="auto">
-                <div class="content-inner">
-                  <h3 class="content-inner--title">{{ item.title }}</h3>
-                  <p class="content-excerpt">{{ item.preview.read_more(false).length(60) }}</p>
+                  data-sizes="auto"
+                  alt="{{ item.thumbnail.alt|e }}">
+                {% if item.eventCategory %}
+                  <p class="eventCategory pill pill--green active--inverted">{{ item.eventCategory }}</p>
+                {% endif %}
+              </div>
+              <div class="content-inner">
+                <div>
+                  <div class="h2 content-title" title="{{ item.title }}">{{ item.title }}</div>
+                  {% if item.eventDate or item.eventVenue %}
+                    <div>{{ item.eventDate|date("d.m.Y")|escape('wp_kses_post') }}</div>
+                    <div>{{ item.eventVenue }}</div>
+                  {% endif %}
                 </div>
-              </a>
-              {# <footer class="content-footer">
-                <span class="content-readingTime">
-                  <i data-feather="clock"></i> {{ item.content | readingtime }} {{ labels.readingTime }}
-                </span>
-                <a href="{{ item.link }}" class="button button--link content-readMore" aria-hidden="true" tabindex="-1">{{ labels.readMore }}</a>
-              </footer> #}
+              </div>
             </div>
-          </li>
+          </a>
         {% endfor %}
-      </ul>
-      {# <div class="allPostsLink">
-        <a href="{{ postTypeArchiveLink }}" class="button button--link">{{ labels.allPosts }}</a>
-      </div> #}
+      </div>
+    </div>
+    <div class="allPostsLink">
+      <a href="{{ labels.allPostslink.url }}" class="button button--green">{{ labels.allPostslink.title }}</a>
     </div>
   </div>
 {% endif %}

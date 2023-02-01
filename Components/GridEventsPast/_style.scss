@@ -1,9 +1,9 @@
-[is='flynt-grid-events-upcoming'] {
-  padding: $spacing-large 0 !important;
+[is='flynt-grid-events-past'] {
+  // padding: $spacing-large 0 !important;
 
-  @media (max-width: $breakpoint-tablet) {
-    padding: $spacing-large !important;
-  }
+  // @media (max-width: $breakpoint-tablet) {
+  //   padding: $spacing-large !important;
+  // }
   
   .preContent {
     grid-column-end: 8;
@@ -59,7 +59,7 @@
 
       &::before {
         content: '↑';
-        font-size: 2.188rem;
+        font-size: 1.7rem;
       }
     }
 

@@ -1,9 +1,9 @@
-[is='flynt-grid-events-upcoming'] {
-  // padding: $spacing-large 0 !important;
+[is='flynt-grid-events-latest'] {
+  padding: $spacing-large*3 0 !important;
 
-  // @media (max-width: $breakpoint-tablet) {
-  //   padding: $spacing-large !important;
-  // }
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-large !important;
+  }
   
   .preContent {
     grid-column-end: 8;
@@ -76,16 +76,8 @@
   }
 
   .allPostsLink {
+    margin-top: $spacing-large*4;
     padding: 0 $spacing-small;
-    text-align: left;
-    text-transform: uppercase;
-
-    @media (max-width: $breakpoint-mobile) {
-      margin-top: $spacing-large;
-    }
-
-    .link {
-      text-decoration: none;
-    }
+    text-align: center;
   }
 }

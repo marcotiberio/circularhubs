@@ -37,7 +37,6 @@
       .category {
         cursor: pointer;
         opacity: 0.5;
-        text-transform: uppercase;
         width: fit-content;
   
         &.active {
@@ -134,7 +133,6 @@
 
       &-image {
         aspect-ratio: 3/2;
-        height: 23vw;
         object-fit: cover;
         transition: all 0.2s linear;
 
@@ -169,7 +167,7 @@
 
       &::before {
         content: '↑';
-        font-size: 2.188rem;
+        font-size: 1.7rem;
       }
     }
 

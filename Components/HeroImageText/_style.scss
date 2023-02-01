@@ -39,6 +39,15 @@
       @media (max-width: $breakpoint-tablet) {
         grid-column-start: 1 !important;
       }
+
+      .button--link {
+        border-bottom: 1px solid $white;
+        text-decoration: none;
+
+        &:hover {
+          border-bottom: 0 solid $white;
+        }
+      }
     }
 
     .contentAlign--right {
@@ -49,8 +58,8 @@
 
     .contentAlign--center {
       justify-content: center;
-      grid-column-end: 7;
-      grid-column-start: 3;
+      grid-column-end: 8;
+      grid-column-start: 2;
     }
 
     .contentAlign--right {

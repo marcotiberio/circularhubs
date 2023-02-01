@@ -3,13 +3,15 @@
     src="{{ posterImage.src|resize(32) }}"
     data-srcset="{{function('wp_get_attachment_image_srcset', posterImage.id)}}"
     data-sizes="auto">
-  {% if contentHtml or buttonLink %}
+  {% if contentHtml %}
     <div class="content grid8">
       <div class="content-inner contentAlign--{{ contentAlignment }}">
         <div>{{ contentHtml }}</div>
-        <a href="{{ buttonLink.url }}"{% if buttonLink.target %} target="{{ buttonLink.target }}" rel="noreferrer noopener"{% endif %} class="button button--link">
-          {{ buttonLink.title|e }}
-        </a>
+        {% if buttonLink %}
+          <a href="{{ buttonLink.url }}"{% if buttonLink.target %} target="{{ buttonLink.target }}" rel="noreferrer noopener"{% endif %} class="button button--link">
+            {{ buttonLink.title|e }}
+          </a>
+        {% endif %}
       </div>
     </div>
   {% endif %}

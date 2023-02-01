@@ -28,19 +28,46 @@ Options::addTranslatable('NavigationFooter', [
         'endpoint' => 0
     ],
     [
-        'label' => __('Logo Pre Text', 'flynt'),
-        'name' => 'preTextLogo',
+        'label' => __('Logo Text (1)', 'flynt'),
+        'name' => 'preTextLogo1',
         'type' => 'text',
-        'default_value' => 'Ein Projekt des'
+        'default_value' => 'Ein Projekt des',
+        'wrapper' =>  [
+            'width' => '50',
+        ]
     ],
     [
-        'label' => __('Logo', 'flynt'),
-        'name' => 'logoFooter',
+        'label' => __('Logo (1)', 'flynt'),
+        'name' => 'logoFooter1',
         'type' => 'image',
         'preview_size' => 'medium',
         'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
         'required' => 0,
-        'mime_types' => 'jpg,jpeg,png,svg'
+        'mime_types' => 'jpg,jpeg,png,svg',
+        'wrapper' =>  [
+            'width' => '50',
+        ]
+    ],
+    [
+        'label' => __('Logo Text (2)', 'flynt'),
+        'name' => 'preTextLogo2',
+        'type' => 'text',
+        'default_value' => 'Gefördert durch',
+        'wrapper' =>  [
+            'width' => '50',
+        ]
+    ],
+    [
+        'label' => __('Logo (2)', 'flynt'),
+        'name' => 'logoFooter2',
+        'type' => 'image',
+        'preview_size' => 'medium',
+        'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
+        'required' => 0,
+        'mime_types' => 'jpg,jpeg,png,svg',
+        'wrapper' =>  [
+            'width' => '50',
+        ]
     ],
     [
         'label' => __('Content', 'flynt'),

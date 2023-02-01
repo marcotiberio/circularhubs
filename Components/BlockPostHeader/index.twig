@@ -9,12 +9,11 @@
     </div>
     {% endif %}
     <div class="right">
-      {% if post.terms('category') %}
-        <p class="eventCategory pill pill--green">{{ post.terms('category') | join(', ') }}</p>
-      {% endif %}
-      {% if post.eventCategory %}
-        <p class="eventCategory pill pill--green">{{ post.eventCategory }}</p>
-      {% endif %}
+      <div class="category-list">
+        {% for categoryz in post.terms('category') %}
+          <span class="eventCategory pill pill--green">{{ categoryz }}</span>
+        {% endfor %}
+      </div>
       <div class="title h3">{{ post.title }}</div>
       <div class="center">
         {% if post.eventDate or post.eventVenue %}
@@ -25,9 +24,11 @@
         {% endif %}
         <div class="intro">{{ post.eventIntro }}</div>
       </div>
-      <a class="button button--green" href="{{ post.eventLink.url }}"{% if post.eventLink.target %} target="{{ post.eventLink.target }}" rel="noreferrer noopener"{% endif %}>
-        {{ post.eventLink.title|e }}
-      </a>
+      {% if post.eventLink %}
+        <a class="button button--green" href="{{ post.eventLink.url }}"{% if post.eventLink.target %} target="{{ post.eventLink.target }}" rel="noreferrer noopener"{% endif %}>
+          {{ post.eventLink.title|e }}
+        </a>
+      {% endif %}
     </div>
   </header>
 </div>

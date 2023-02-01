@@ -1,14 +1,14 @@
 <?php
 
-namespace Flynt\Components\GridPostsLatest;
+namespace Flynt\Components\GridEventsLatest;
 
 use Flynt\FieldVariables;
 use Flynt\Utils\Options;
 use Timber\Timber;
 
-const POST_TYPE = 'post';
+const POST_TYPE = 'event';
 
-add_filter('Flynt/addComponentData?name=GridPostsLatest', function ($data) {
+add_filter('Flynt/addComponentData?name=GridEventsLatest', function ($data) {
     $postType = POST_TYPE;
 
     $data['taxonomies'] = $data['taxonomies'] ?: [];
@@ -22,16 +22,16 @@ add_filter('Flynt/addComponentData?name=GridPostsLatest', function ($data) {
             return $taxonomy->term_id;
         }, $data['taxonomies'])),
         'posts_per_page' => $data['options']['columns'],
-        // 'meta_key'          => 'eventDate',
-        // 'orderby'           => 'meta_value',
-        // 'order'             => 'DESC',
-        // 'meta_query'        => array(
-        //     array(
-        //         'key'           => 'eventDate',
-        //         'compare'       => '>=',
-        //         'value'         => $today,
-        //     ),
-        // ),
+        'meta_key'          => 'eventDate',
+        'orderby'           => 'meta_value',
+        'order'             => 'DESC',
+        'meta_query'        => array(
+            array(
+                'key'           => 'eventDate',
+                'compare'       => '>=',
+                'value'         => $today,
+            ),
+        ),
         'ignore_sticky_posts' => 1,
         'post__not_in' => array(get_the_ID())
     ]);
@@ -44,8 +44,8 @@ add_filter('Flynt/addComponentData?name=GridPostsLatest', function ($data) {
 function getACFLayout()
 {
     return [
-        'name' => 'GridPostsLatest',
-        'label' => 'Grid: Best Practices Latest',
+        'name' => 'GridEventsLatest',
+        'label' => 'Grid: Events Latest',
         'sub_fields' => [
             [
                 'label' => __('General', 'flynt'),
@@ -102,7 +102,7 @@ function getACFLayout()
     ];
 }
 
-Options::addTranslatable('GridPostsLatest', [
+Options::addTranslatable('GridEventsLatest', [
     [
         'label' => __('Labels', 'flynt'),
         'name' => 'labelsTab',

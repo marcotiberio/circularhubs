@@ -12,6 +12,9 @@
                   src="{{ item.thumbnail.src|resize(32) }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
                   data-sizes="auto">
+                  {% if item.eventCategory %}
+                    <p class="eventCategory pill pill--green active--inverted">{{ item.eventCategory }}</p>
+                  {% endif %}
                 <div class="content-inner">
                   <div>
                     <div class="h2 content-title" title="{{ item.title }}">{{ item.title }}</div>

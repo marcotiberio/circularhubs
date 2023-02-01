@@ -38,7 +38,7 @@ function getACFLayout()
 {
     return [
         'name' => 'gridPostsPremium',
-        'label' => 'Grid: Posts Premium',
+        'label' => 'Grid: Best Practices Archive',
         'sub_fields' => [
             [
                 'label' => '',

@@ -1,5 +1,5 @@
 {% if items|length > 0 %}
-  <div class="flyntComponent componentSpacing {{ options.theme }}" id="{{ preContentHtml|lower|replace({' ': ''})}}" is="flynt-grid-events-upcoming">
+  <div class="flyntComponent boxed" id="{{ preContentHtml|lower|replace({' ': ''})}}" is="flynt-grid-events-past">
     <div class="container grid8">
       <div class="preContent h2">{{ preContentHtml|e('wp_kses_post') }}</div>
       <div class="grid grid3">
@@ -12,8 +12,8 @@
                   data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
                   data-sizes="auto"
                   alt="{{ item.thumbnail.alt|e }}">
-                {% if item.terms('category') %}
-                  <p class="eventCategory pill pill--green">{{ item.terms('category') | join(', ') }}</p>
+                {% if item.eventCategory %}
+                  <p class="eventCategory pill pill--green active--inverted">{{ item.eventCategory }}</p>
                 {% endif %}
               </div>
               <div class="content-inner">
