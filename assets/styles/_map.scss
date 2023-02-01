@@ -7,4 +7,55 @@
         grid-column-end: 9;
         grid-column-start: 1;
     }
+
+    .wpgmza-basic-listing-image-holder {
+        display: none;
+    }
+
+    .wpgmza_marker_title {
+        a {
+            text-decoration: none;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .wpgmza-address {
+        font-size: 0.7rem;
+    }
+
+    .wpgmza-desc {
+        margin-top: $spacing-small;
+
+        span {
+            font-size: 0.7rem;
+        }
+    }
+
+    .wpgmza-link {
+        border-bottom: 1px solid $black;
+        width: fit-content;
+
+        a {
+            font-size: 0.7rem;
+            text-decoration: none;
+
+            &::after {
+                content: '↑';
+                margin-left: $spacing-large;
+              }
+        }
+    }
+
+    .gm-style {
+        .gm-style-iw-c {
+            display: none !important;
+        }
+    }
+
+    .gm-style .gm-style-iw-tc::after {
+        display: none !important;
+    }
 }
