@@ -39,15 +39,6 @@
       @media (max-width: $breakpoint-tablet) {
         grid-column-start: 1 !important;
       }
-
-      .button--link {
-        border-bottom: 1px solid $white;
-        text-decoration: none;
-
-        &:hover {
-          border-bottom: 0 solid $white;
-        }
-      }
     }
 
     .contentAlign--right {

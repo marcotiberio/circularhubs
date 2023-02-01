@@ -31,6 +31,7 @@
         column-gap: $spacing-small;
         display: flex;
         gap: $spacing-large;
+        flex-flow: row wrap;
         justify-content: flex-start;
       }
   

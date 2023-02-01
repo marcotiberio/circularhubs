@@ -91,9 +91,9 @@ function getACFLayout()
                         'label' => __('Posts shown', 'flynt'),
                         'name' => 'columns',
                         'type' => 'number',
-                        'default_value' => -1,
-                        'min' => -1,
-                        'max' => 100,
+                        'default_value' => 2,
+                        'min' => 1,
+                        'max' => 3,
                         'step' => 1
                     ]
                 ]
