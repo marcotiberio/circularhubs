@@ -37,17 +37,16 @@
   
       .category {
         cursor: pointer;
-        opacity: 0.5;
         width: fit-content;
   
         &.active {
-          opacity: 1;
+          background: $green;
+          color: $white;
         }
 
         &:hover {
           background: $green;
           color: $white;
-          opacity: 1;
         }
 
         &[data-term='uncategorized'] {
