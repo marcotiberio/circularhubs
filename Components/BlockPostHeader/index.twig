@@ -9,19 +9,21 @@
     </div>
     {% endif %}
     <div class="right">
-      <div class="category-list">
-        {% for categoryz in post.terms('category') %}
-          <span class="eventCategory pill pill--green">{{ categoryz }}</span>
-        {% endfor %}
-      </div>
-      <div class="title h3">{{ post.title }}</div>
-      <div class="center">
+      <div class="top">
+        <div class="category-list">
+          {% for categoryz in post.terms('category') %}
+            <span class="eventCategory pill pill--green">{{ categoryz }}</span>
+          {% endfor %}
+        </div>
+        <div class="title h2">{{ post.title }}</div>
         {% if post.eventDate or post.eventVenue %}
         <div class="datevenue">
           <div>{{ post.eventDate|date("d.m.Y")|escape('wp_kses_post') }}</div>
           <div>{{ post.eventVenue }}</div>
         </div>
         {% endif %}
+      </div>
+      <div class="center">
         <div class="intro">{{ post.eventIntro }}</div>
       </div>
       {% if post.eventLink %}

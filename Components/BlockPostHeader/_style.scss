@@ -36,11 +36,10 @@
         flex-flow: row wrap;
         gap: $spacing-small;
         justify-content: flex-start;
+        margin-bottom: 1.2rem;
       }
 
       .title {
-        text-transform: uppercase;
-        
         @media (max-width: $breakpoint-tablet) {
           margin-top: $spacing-large;
         }

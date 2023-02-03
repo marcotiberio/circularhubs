@@ -12,8 +12,8 @@
             <div class="category-list">
               <li class="category category--all active pill pill--green" data-term="all">All</li>
               {% for category in topics %}
-                {% if category.count >= 0 %}
-                  <li class="category pill pill--green" data-term="{{ category.title|lower|replace({' ': '-'}) }}">{{ category.title }}</li>
+                {% if category.count > 0 %}
+                  <li class="category pill pill--green" data-term="{{ category.title|lower|replace({' ': '-'}) }}">{{ category.title }} {{ TotalInTerm }}</li>
                 {% endif %}
               {% endfor %}
             </div>

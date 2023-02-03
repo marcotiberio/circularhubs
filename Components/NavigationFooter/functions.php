@@ -33,7 +33,16 @@ Options::addTranslatable('NavigationFooter', [
         'type' => 'text',
         'default_value' => 'Ein Projekt des',
         'wrapper' =>  [
-            'width' => '50',
+            'width' => '33',
+        ]
+    ],
+    [
+        'label' => __('Logo Link (1)', 'flynt'),
+        'name' => 'logoLink1',
+        'type' => 'link',
+        'return_format' => 'array',
+        'wrapper' =>  [
+            'width' => '33',
         ]
     ],
     [
@@ -45,7 +54,7 @@ Options::addTranslatable('NavigationFooter', [
         'required' => 0,
         'mime_types' => 'jpg,jpeg,png,svg',
         'wrapper' =>  [
-            'width' => '50',
+            'width' => '33',
         ]
     ],
     [
@@ -54,7 +63,16 @@ Options::addTranslatable('NavigationFooter', [
         'type' => 'text',
         'default_value' => 'Gefördert durch',
         'wrapper' =>  [
-            'width' => '50',
+            'width' => '33',
+        ]
+    ],
+    [
+        'label' => __('Logo Link (2)', 'flynt'),
+        'name' => 'logoLink2',
+        'type' => 'link',
+        'return_format' => 'array',
+        'wrapper' =>  [
+            'width' => '33',
         ]
     ],
     [
@@ -66,7 +84,7 @@ Options::addTranslatable('NavigationFooter', [
         'required' => 0,
         'mime_types' => 'jpg,jpeg,png,svg',
         'wrapper' =>  [
-            'width' => '50',
+            'width' => '33',
         ]
     ],
     [
