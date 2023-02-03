@@ -16,11 +16,6 @@
   }
 
   .grid {
-    align-items: center;
-    display: flex;
-    flex-flow: row wrap;
-    gap: $spacing-large;
-    justify-content: space-between;
     grid-column-end: 8;
     grid-column-start: 2;
 
@@ -29,9 +24,7 @@
     }
 
     &-item {
-      flex-grow: 1;
       text-decoration: none;
-      width: calc(33% - 20%);
     }
   }
 
@@ -73,6 +66,7 @@
     &-title {
       margin-bottom: 0;
       text-decoration: none;
+      width: 80%;
     }
   }
 

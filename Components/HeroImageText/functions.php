@@ -16,7 +16,7 @@ function getACFLayout()
                 'endpoint' => 0
             ],
             [
-                'label' => __('Image', 'flynt'),
+                'label' => __('Image Desktop', 'flynt'),
                 'name' => 'posterImage',
                 'type' => 'image',
                 'return_format' => 'array',
@@ -25,6 +25,23 @@ function getACFLayout()
                 'mime_types' => 'jpg,jpeg,png',
                 'required' => 0,
                 'instructions' => __('Image-Format: JPG, PNG. Recommended resolution greater than 2048 x 800 px.', 'flynt'),
+                'wrapper' =>  [
+                    'width' => '50',
+                ]
+            ],
+            [
+                'label' => __('Image Mobile', 'flynt'),
+                'name' => 'posterImageMobile',
+                'type' => 'image',
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'mime_types' => 'jpg,jpeg,png',
+                'required' => 0,
+                'instructions' => __('Image-Format: JPG, PNG. Recommended resolution greater than 2048 x 800 px.', 'flynt'),
+                'wrapper' =>  [
+                    'width' => '50',
+                ]
             ],
             [
                 'label' => __('Content', 'flynt'),

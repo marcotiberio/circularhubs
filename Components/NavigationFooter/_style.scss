@@ -2,6 +2,14 @@
   font-size: 0.7rem;
   margin-top: $spacing-xlarge*3;
 
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: $spacing-xlarge*2;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: $spacing-xlarge;
+  }
+
   ::placeholder {
     color: $white;
     opacity: 1;
@@ -74,20 +82,31 @@
     }
 
     .left {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      gap: $spacing-xlarge;
+      justify-content: flex-start;
       margin: 0;
       width: 50%;
 
-      @media (max-width: $breakpoint-tablet) {
+      @media (max-width: $breakpoint-mobile) {
+        justify-content: center;
+        margin: $spacing-small auto;
+        width: 100%;
+      }
+
+      .logo1,
+      .logo2 {
         align-items: center;
         display: flex;
         flex-flow: row wrap;
         gap: $spacing-small;
         justify-content: flex-start;
-      }
 
-      @media (max-width: $breakpoint-mobile) {
-        justify-content: center;
-        margin: auto;
+        @media (max-width: $breakpoint-tablet) {
+          flex-flow: column wrap;
+        }
       }
 
       .preText {

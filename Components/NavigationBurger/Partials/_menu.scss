@@ -12,7 +12,7 @@
   padding-bottom: 30px;
   padding-top: 30px;
   position: fixed;
-  top: 75px;
+  top: 60px;
   // transform: translateY(-100%);
   transition: all 0.45s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.45s;
   visibility: hidden;
@@ -29,7 +29,7 @@
 
   &-item--current {
     .menu-link {
-      background: linear-gradient(90deg, #e17a3f 0%, #dd5a3a 165.97%);
+      background: linear-gradient(90deg, #58b14e -0.04%, #b8d484 165.69%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -55,7 +55,7 @@
     transition: color 0.2s ease-out;
 
     &:focus {
-      background: linear-gradient(90deg, #e17a3f 0%, #dd5a3a 165.97%);
+      background: linear-gradient(90deg, #58b14e -0.04%, #b8d484 165.69%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

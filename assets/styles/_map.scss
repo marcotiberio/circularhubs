@@ -8,6 +8,16 @@
         grid-column-start: 1;
     }
 
+    .wpgmza_map .wpgmza-inner-stack.left {
+        justify-content: flex-start;
+    }
+
+    .wpgmza_map .wpgmza-inner-stack > .legacy-listing-adapter {
+        @media (max-width: $breakpoint-tablet) {
+            max-height: 170px;
+        }
+    }
+
     .wpgmza-basic-listing-image-holder {
         display: none;
     }

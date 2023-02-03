@@ -14,6 +14,22 @@
     @media (max-width: $breakpoint-mobile) {
       aspect-ratio: 3/4;
     }
+
+    &--desktop {
+      display: block;
+
+      @media (max-width: $breakpoint-tablet) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media (max-width: $breakpoint-tablet) {
+        display: block;
+      }
+    }
   }
 
   .content {

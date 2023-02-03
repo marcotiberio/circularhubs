@@ -1,4 +1,13 @@
+/* stylelint-disable property-no-vendor-prefix */
+
 [is='flynt-tabs-default'] {
+  .preContent {
+    background: linear-gradient(90deg, #e17a3f 0%, #dd5a3a 165.97%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .tabs {
     display: block;
     width: 100%;
@@ -63,8 +72,8 @@
 
       &--inner {
         align-items: center;
-        grid-column-end: 8;
-        grid-column-start: 2;
+        grid-column-end: 9;
+        grid-column-start: 1;
 
         @media (max-width: $breakpoint-tablet) {
           grid-column-start: 1;
