@@ -2,6 +2,55 @@
   font-size: 0.7rem;
   margin-top: $spacing-xlarge*3;
 
+  .preContainer {
+    padding: $spacing-large*4 0;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: $spacing-large*2 $spacing-large;
+    }
+
+    .contactForm {
+      grid-column-end: 8;
+      grid-column-start: 2;
+
+      @media (max-width: $breakpoint-tablet) {
+        grid-column-end: 9;
+        grid-column-start: 1;
+      }
+
+      .hf-fields-wrap {
+        .row {
+          column-gap: $spacing-large;
+          display: grid;
+          grid-template-columns: 3fr 3fr 1fr;
+          row-gap: $spacing-large;
+
+          @media (max-width: $breakpoint-mobile) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+          }
+
+          input {
+            margin-bottom: 0;
+          }
+
+          .button--white {
+            @media (max-width: $breakpoint-mobile) {
+              grid-column-end: 3;
+              grid-column-start: 1;
+            }
+            
+            &:hover,
+            &:focus {
+              background-color: $white;
+              color: $green;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .container {
     align-items: center;
     display: flex;

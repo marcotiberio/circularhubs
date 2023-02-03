@@ -97,6 +97,21 @@ Options::addTranslatable('NavigationFooter', [
         'default_value' => '©&nbsp;[year] [sitetitle]'
     ],
     [
+        'label' => __('Contact Form', 'flynt'),
+        'name' => 'contactformTab',
+        'type' => 'tab',
+        'placement' => 'top',
+        'endpoint' => 0,
+    ],
+    [
+        'label' => __('Contact Form', 'flynt'),
+        'name' => 'shortcodeForm',
+        'type' => 'wysiwyg',
+        'media_upload' => 0,
+        'delay' => 0,
+        'toolbar' => 'basic',
+    ],
+    [
         'label' => __('Content Examples', 'flynt'),
         'name' => 'templateTab',
         'type' => 'tab',
