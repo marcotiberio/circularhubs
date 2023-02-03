@@ -2,6 +2,11 @@
   font-size: 0.7rem;
   margin-top: $spacing-xlarge*3;
 
+  ::placeholder {
+    color: $white;
+    opacity: 1;
+  }
+
   .preContainer {
     padding: $spacing-large*4 0;
 
