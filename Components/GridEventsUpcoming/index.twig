@@ -20,7 +20,10 @@
                 <div>
                   <div class="h2 content-title" title="{{ item.title }}">{{ item.title }}</div>
                   {% if item.eventDate or item.eventVenue %}
-                    <div>{{ item.eventDate|date("d.m.Y")|escape('wp_kses_post') }}</div>
+                    <span>{{ item.eventDate|date("d.m.Y")|escape('wp_kses_post') }}</span>
+                    {% if item.eventTime %}
+                      <span> - {{ item.eventTime }}</span>
+                    {% endif %}
                     <div>{{ item.eventVenue }}</div>
                   {% endif %}
                 </div>
