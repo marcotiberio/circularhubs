@@ -78,6 +78,7 @@
         gap: $spacing-large;
 
         @media (max-width: $breakpoint-mobile) {
+          flex-flow: column-reverse wrap;
           padding: $spacing-large;
           width: 100%;
         }
@@ -85,10 +86,6 @@
         .image {
           display: flex;
           flex-grow: 1;
-        }
-
-        .text {
-          height: 100%;
         }
       }
     }
@@ -111,6 +108,10 @@
       .image {
         object-fit: contain;
         width: auto;
+
+        @media (max-width: $breakpoint-mobile) {
+          width: 100%;
+        }
       }
     }
   }
@@ -129,6 +130,7 @@
       width: 50%;
 
       @media (max-width: $breakpoint-mobile) {
+        flex-flow: column-reverse wrap;
         padding: $spacing-large;
         width: 100%;
       }
@@ -136,10 +138,18 @@
       .image {
         object-fit: contain;
         width: 50%;
+
+        @media (max-width: $breakpoint-mobile) {
+          width: 100%;
+        }
       }
 
       .text {
         width: 50%;
+
+        @media (max-width: $breakpoint-mobile) {
+          width: 100%;
+        }
       }
     }
   }
