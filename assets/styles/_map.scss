@@ -45,16 +45,17 @@
     }
 
     .wpgmza-link {
-        border-bottom: 1px solid $black;
-        width: fit-content;
-
         a {
+            color: $white;
             font-size: 0.7rem;
             text-decoration: none;
 
             &::after {
-                content: '↑';
-                margin-left: $spacing-large;
+                background: $white;
+                border-bottom: 1px solid $black;
+                color: $black;
+                content: 'Website ↑';
+                margin-left: -80px;
               }
         }
     }
