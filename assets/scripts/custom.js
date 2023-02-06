@@ -34,3 +34,6 @@ $('.filterSection .category').on('click', function (e) {
 $('.filterSection .category--all').on('click', function (e) {
   $('.grid-item').show()
 })
+
+// All to Alle
+$('#wpgmza_filter_select option[value=0]').text($('#wpgmza_filter_select option[value=0]').text().replace('All', 'Alle'))
