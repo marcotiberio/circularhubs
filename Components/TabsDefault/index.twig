@@ -16,7 +16,7 @@
           <div class="tab-content {{ loop.index }} {{ panel.additionalCompany }}">
             <div class="tab-content--inner" id="tabInner1">
               <img class="image lazyload"
-                src="{{ panel.panelImage.src|resize(32) }}"
+                src="{{ panel.panelImage.src }}"
                 data-srcset="{{function('wp_get_attachment_image_srcset', panel.panelImage.id)}}"
                 data-sizes="auto">
               <div class="text">
@@ -25,7 +25,7 @@
             </div>
             <div class="tab-content--inner" id="tabInner2">
               <img class="image lazyload"
-                src="{{ panel.panelImage2.src|resize(32) }}"
+                src="{{ panel.panelImage2.src }}"
                 data-srcset="{{function('wp_get_attachment_image_srcset', panel.panelImage2.id)}}"
                 data-sizes="auto">
               <div class="text">
