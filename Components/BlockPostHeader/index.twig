@@ -24,7 +24,7 @@
         {% endif %}
       </div>
       <div class="center">
-        <div class="intro">{{ post.eventIntro|e('wp_kses_post') }}</div>
+        <div class="intro">{{ post.eventIntro|wpautop }}</div>
       </div>
       {% if post.eventLink %}
         <a class="button button--green" href="{{ post.eventLink.url }}"{% if post.eventLink.target %} target="{{ post.eventLink.target }}" rel="noreferrer noopener"{% endif %}>

@@ -158,9 +158,9 @@
     &-inner {
       @include reset-content-margins;
       align-items: flex-start;
-      display: flex;
-      flex-flow: row wrap;
-      gap: $spacing-small;
+      column-gap: $spacing-small;
+      display: grid;
+      grid-template-columns: 1fr 10fr;
       margin-top: $spacing-large;
 
       #{$heading-selectors} {
