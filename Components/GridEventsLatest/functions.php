@@ -24,7 +24,7 @@ add_filter('Flynt/addComponentData?name=GridEventsLatest', function ($data) {
         'posts_per_page' => $data['options']['columns'],
         'meta_key'          => 'eventDate',
         'orderby'           => 'meta_value',
-        'order'             => 'DESC',
+        'order'             => 'ASC',
         'meta_query'        => array(
             array(
                 'key'           => 'eventDate',

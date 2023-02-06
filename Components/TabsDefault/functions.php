@@ -29,6 +29,7 @@ function getACFLayout()
                 'layout' => 'row',
                 'min' => 1,
                 'button_label' => __('Add Tab', 'flynt'),
+                'collapsed' => 'panelTitle',
                 'sub_fields' => [
                     [
                         'label' => __('Title', 'flynt'),

@@ -43,6 +43,11 @@
       grid-column-end: 2;
       grid-column-start: 1;
       position: relative;
+
+      img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
     }
 
     &-inner {

@@ -17,17 +17,25 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'date_picker',
                 'first_day' => 1,
                 'wrapper' => [
-                    'width' => '33',
+                    'width' => '50',
                 ],
                 'display_format' => 'd.m.Y',
                 'return_format' => 'd.m.Y'
+            ],
+            [
+                'label' => __('Time', 'flynt'),
+                'name' => 'eventTime',
+                'type' => 'text',
+                'wrapper' => [
+                    'width' => '50',
+                ]
             ],
             [
                 'label' => __('Venue', 'flynt'),
                 'name' => 'eventVenue',
                 'type' => 'text',
                 'wrapper' => [
-                    'width' => '33',
+                    'width' => '50',
                 ]
             ],
             [
@@ -35,7 +43,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'name' => 'eventCategory',
                 'type' => 'text',
                 'wrapper' => [
-                    'width' => '33',
+                    'width' => '50',
                 ]
             ],
             [
