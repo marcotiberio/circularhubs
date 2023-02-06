@@ -39,6 +39,27 @@ function getACFLayout()
                         ]
                     ],
                     [
+                        'label' => __('Add another Company?', 'flynt'),
+                        'name' => 'additionalCompany',
+                        'type' => 'select',
+                        'allow_null' => 0,
+                        'multiple' => 0,
+                        'ui' => 1,
+                        'ajax' => 0,
+                        'choices' => [
+                            'additionalCompanyYes' => __('Yes', 'flynt'),
+                            'additionalCompanyNo' => __('No', 'flynt'),
+                        ],
+                        'default_value' => 'additionalCompanyNo'
+                    ],
+                    [
+                        'label' => __('Company n.1', 'flynt'),
+                        'name' => 'company1Tab',
+                        'type' => 'tab',
+                        'placement' => 'top',
+                        'endpoint' => 0
+                    ],
+                    [
                         'label' => __('Image', 'flynt'),
                         'name' => 'panelImage',
                         'type' => 'image',
@@ -60,6 +81,63 @@ function getACFLayout()
                         'wrapper' =>  [
                             'width' => '70',
                         ]
+                    ],
+                    [
+                        'label' => __('Company n.2', 'flynt'),
+                        'name' => 'company2Tab',
+                        'type' => 'tab',
+                        'placement' => 'top',
+                        'endpoint' => 0,
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'fieldPath' => 'additionalCompany',
+                                    'operator' => '==',
+                                    'value' => 'additionalCompanyYes'
+                                ]
+                            ]
+                        ],
+                    ],
+                    [
+                        'label' => __('Image', 'flynt'),
+                        'name' => 'panelImage2',
+                        'type' => 'image',
+                        'preview_size' => 'medium',
+                        'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
+                        'required' => 0,
+                        'mime_types' => 'jpg,jpeg,png,svg',
+                        'wrapper' =>  [
+                            'width' => '30',
+                        ],
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'fieldPath' => 'additionalCompany',
+                                    'operator' => '==',
+                                    'value' => 'additionalCompanyYes'
+                                ]
+                            ]
+                        ],
+                    ],
+                    [
+                        'label' => __('Content', 'flynt'),
+                        'name' => 'panelContent2',
+                        'type' => 'wysiwyg',
+                        'tabs' => 'visual,text',
+                        'media_upload' => 0,
+                        'delay' => 1,
+                        'wrapper' =>  [
+                            'width' => '70',
+                        ],
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'fieldPath' => 'additionalCompany',
+                                    'operator' => '==',
+                                    'value' => 'additionalCompanyYes'
+                                ]
+                            ]
+                        ],
                     ],
                 ],
             ],
