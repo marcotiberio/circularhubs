@@ -36,7 +36,7 @@ $('.filterSection .category--all').on('click', function (e) {
 })
 
 // All to Alle
-$('#wpgmza_filter_select option[value=0]').text($('#wpgmza_filter_select option[value=0]').text().replace('All', 'Alle'))
+$('#wpgmza_filter_select option[value=0]').text($('#wpgmza_filter_select option[value=0]').text().replace('All', 'Filter'))
 
 // $(document).ready(function () {
 //   $('.wpgmza-link a').attr({ target: '_blank' })
