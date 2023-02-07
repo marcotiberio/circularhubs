@@ -6,6 +6,10 @@
     .content {
         grid-column-end: 9;
         grid-column-start: 1;
+
+        #wpgmza_map_1 {
+            height: calc(100vh - 115px) !important;
+        }
     }
 
     .wpgmza_map .wpgmza-inner-stack.left {
