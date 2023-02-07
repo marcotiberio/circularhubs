@@ -46,25 +46,35 @@
 
     .wpgmza-link {
         a {
-            color: $white;
+            border-bottom: 1px solid $black;
             font-size: 0.7rem;
             text-decoration: none;
+            width: fit-content;
 
             &::after {
-                background: $white;
-                border-bottom: 1px solid $black;
-                color: $black;
-                content: 'Website ↑';
-                margin-left: -80px;
-
-                @media (max-width: $breakpoint-mobile) {
-                    margin-left: -65px;
-                }
+                content: '↑';
+                margin-left: 5px;
               }
         }
     }
 
-    .wpgmza-inner-stack.top {
+    .wpgmza-infowindow-link {
+        a {
+            border-bottom: 1px solid $black;
+            font-size: 0.7rem;
+            text-decoration: none;
+            width: fit-content;
+
+            &::after {
+                content: '↑';
+                margin-left: 5px;
+              }
+        }
+    }
+
+    .wpgmza-inner-stack.top_right {
+        right: 0;
+
         @media (max-width: $breakpoint-tablet) {
             bottom: 0 !important;
             left: 0 !important;

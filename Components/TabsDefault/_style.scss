@@ -30,7 +30,7 @@
       border-radius: 5px;
       cursor: pointer;
       display: inline-block;
-      padding: $spacing-small $spacing-xlarge;
+      padding: $spacing-small 30px;
       position: relative;
       text-align: center;
       transition: 0.6s;
@@ -95,7 +95,7 @@
     .tab-content--inner {
       align-items: center;
       display: flex;
-      flex-flow: column-reverse wrap;
+      flex-flow: column wrap;
       flex-grow: 1;
       padding: 0 $spacing-xlarge;
       width: 50%;
@@ -130,7 +130,7 @@
       width: 50%;
 
       @media (max-width: $breakpoint-mobile) {
-        flex-flow: column-reverse wrap;
+        flex-flow: column wrap;
         padding: $spacing-large;
         width: 100%;
       }
