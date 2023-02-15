@@ -16,15 +16,22 @@
         margin-left: $spacing-large !important;
         margin-top: $spacing-large !important;
         position: relative !important;
+        top: 70px !important;
+
+        @media (max-width: $breakpoint-tablet) {
+            margin-left: 11px !important;
+            margin-top: 0 !important;
+        }
     }
 
     .wpgmza_map .wpgmza-inner-stack > .grouping {
         position: absolute !important;
     }
 
-    // .wpgmza_map .wpgmza-inner-stack .grouping.visible ~ .grouping-handle {
-    //     display: none !important;
-    // }
+    .wpgmza_map .wpgmza-inner-stack .grouping ~ .grouping-handle {
+        top: 110px !important;
+    }
+
 
     .wpgmza_map .wpgmza-inner-stack.left {
         justify-content: flex-start;
@@ -90,19 +97,23 @@
         }
     }
 
-    .wpgmza-inner-stack.top_right {
+    .wpgmza-inner-stack.top_left {
+        margin-left: 0 !important;
+        bottom: auto !important;
+        left: $spacing-large*0.5 !important;
+        right: auto !important;
         top: $spacing-large*0.5 !important;
-        right: $spacing-large*0.5 !important;
 
         @media (max-width: $breakpoint-tablet) {
-            bottom: 0 !important;
+            bottom: auto !important;
             left: 0 !important;
-            top: auto !important;
+            top: 0 !important;
             transform: none !important;
         }
 
         select {
-            color: $black;
+            background: linear-gradient(90deg, #58b14e -0.04%, #b8d484 165.69%);
+            color: $white;
         }
     }
 

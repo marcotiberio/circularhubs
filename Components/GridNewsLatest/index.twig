@@ -1,0 +1,38 @@
+{% if items|length > 0 %}
+  <div class="flyntComponent" id="{{ sectionId|lower|replace({' ': '-'})}}" is="flynt-grid-news-latest">
+    <div class="sectionId">{{ sectionId }}</div>
+    <div class="container grid8 boxed">
+      {% if preContentHtml %}
+        <div class="preContent h2">{{ preContentHtml|e('wp_kses_post') }}</div>
+      {% endif %}
+      <div class="grid grid2">
+        {% for item in items %}
+          <a href="{{ item.link }}" class="grid-item">
+            <div class="content">
+              <div class="content-image">
+                <img class="lazyload"
+                  src="{{ item.thumbnail.src }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
+                  data-sizes="auto"
+                  alt="{{ item.thumbnail.alt|e }}">
+                {% if item.eventCategory %}
+                  <p class="eventCategory pill pill--green active--inverted">{{ item.eventCategory }}</p>
+                {% endif %}
+              </div>
+              <div class="content-inner">
+                <div class="h2 content-title" title="{{ item.title }}">{{ item.title }}</div>
+                {% if item.eventDate or item.eventVenue %}
+                  <div>{{ item.eventDate|date("d.m.Y")|escape('wp_kses_post') }}</div>
+                  <div>{{ item.eventVenue }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="allPostsLink">
+      <a href="{{ labels.allPostslink.url }}" class="button button--green">{{ labels.allPostslink.title }}</a>
+    </div>
+  </div>
+{% endif %}
