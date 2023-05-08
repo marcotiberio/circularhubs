@@ -52,26 +52,36 @@
 
     &-inner {
       @include reset-content-margins;
-      align-items: flex-start;
-      column-gap: $spacing-small;
-      display: grid;
-      grid-template-columns: 1fr 10fr;
+      display: block;
       margin-top: $spacing-large;
 
       #{$heading-selectors} {
         color: $color-headline;
       }
 
-      &::before {
-        content: '↑';
-        font-size: 1.7rem;
-      }
+      // &::before {
+      //   content: '↑';
+      //   font-size: 1.7rem;
+      // }
     }
 
     &-title {
-      margin-bottom: 0;
+      display: flex;
+      flex-flow: row wrap;
+      gap: $spacing-small;
+      justify-content: flex-start;
+      margin-bottom: $spacing-small;
       text-decoration: none;
-      width: 80%;
+      width: 100%;
+
+      .arrow {
+        font-size: 1.7rem;
+      }
+
+      .h2 {
+        margin-bottom: 0;
+        width: calc(100% - 60px);
+      }
     }
   }
 
